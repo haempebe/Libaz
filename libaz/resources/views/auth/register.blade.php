@@ -67,7 +67,7 @@
                                         or
                                     </p>
                                 </div>
-                                <div class="row px-xl-5 px-sm-4 px-3">
+                                <div class="row px-md-0 px-lg-4 px-sm-3">
                                     <div class="col-3 me-auto px-1">
                                         <a class="btn btn-outline-light w-100" href="javascript:;">
                                             <svg width="24px" height="32px" viewBox="0 0 64 64" version="1.1">
@@ -121,7 +121,6 @@
                                 </div>
                                 <p class="text-sm mt-3 mb-0">Already have an account? <a href="{{ route('login') }}"
                                         class="text-dark font-weight-bolder">Sign in</a></p>
-
                             </form>
                         </div>
                     </div>

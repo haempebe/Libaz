@@ -21,20 +21,21 @@
                                             class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             Make at</th>
                                         <th
-                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             Action</th>
                                     </tr>
                                 </thead>
+                                @foreach ($allcategory as $item)
                                 <tbody>
                                     <tr>
                                         <td>
                                             <p class="ps-3 text-xs font-weight-bold mb-0">1</p>
                                         </td>
                                         <td class="align-middle text-center text-sm">
-                                            <span class="text-secondary text-xs font-weight-bold">Religious</span>
+                                            <span class="text-secondary text-xs font-weight-bold">{{$item->name}}</span>
                                         </td>
                                         <td class="align-middle text-center">
-                                            <span class="text-secondary text-xs font-weight-bold">23/04/18</span>
+                                            <span class="text-secondary text-xs font-weight-bold">{{$item->timestamp}}</span>
                                         </td>
                                         <td class="align-middle text-center">
                                             <a href="javascript:;"
@@ -50,6 +51,7 @@
                                         </td>
                                     </tr>
                                 </tbody>
+                                @endforeach
                             </table>
                         </div>
                     </div>
@@ -57,24 +59,23 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <form role="form" method="POST" action=""
-                        enctype="multipart/form-data">
-                        <input type="hidden" name="_token" value="CYtRh5L5EHvlIDQqqeovjLZXy8EYCCdirewrEOiV"
-                            autocomplete="off">
+                    <form role="form" method="POST" action="{{ route('category.perform') }}">
+                        @csrf
                         <div class="card-header border-radius-lg pb-0">
                             <p class="mb-0">+ New Category</p>
                         </div>
                         <div class="card-body pb-0">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="example-text-input" class="form-control-label">Name</label>
-                                    <input class="form-control" type="text" name="name" value=""
-                                        onfocus="focused(this)" onfocusout="defocused(this)">
-                                </div>
+                            <div class="form-group">
+                                <label for="example-text-input" class="form-control-label">Name</label>
+                                <input class="form-control" type="text" name="name" value=""
+                                    onfocus="focused(this)" onfocusout="defocused(this)">
+                                @error('name')
+                                    <p class='text-danger text-xs pt-1'> {{ $message }} </p>
+                                @enderror
                             </div>
                         </div>
                         <div class="card-footer">
-                                <button class="btn btn-dark btn-sm mb-0 w-100">Create</button>
+                            <button class="btn btn-dark btn-sm mb-0 w-100">Create</button>
                         </div>
                     </form>
                 </div>
