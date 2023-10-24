@@ -40,7 +40,7 @@ Route::group(['middleware' => 'guest'], function () {
 });
 
 
-Route::group(['middleware' => 'admin'], function () {
+Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
     Route::get('/profile', [UserProfileController::class, 'show'])->name('profile');
     Route::post('/profile', [UserProfileController::class, 'update'])->name('profile.update');
