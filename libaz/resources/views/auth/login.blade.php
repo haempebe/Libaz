@@ -1,3 +1,4 @@
+@section('topTitle', 'Log In')
 @extends('layouts.app')
 
 @section('content')

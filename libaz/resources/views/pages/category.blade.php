@@ -43,7 +43,7 @@
                                                 <span class="btn-inner--text"> Edit</span>
                                             </a>
                                             <a href="javascript:;"
-                                                class="btn btn-xs bg-gradient-danger mb-0 font-weight-bold text-xs">
+                                                class="btn btn-xs btn-danger mb-0 font-weight-bold text-xs">
                                                 <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
                                                 <span class="btn-inner--text"> Delete</span>
                                             </a>
@@ -64,7 +64,7 @@
                         <div class="card-header border-radius-lg pb-0">
                             <p class="mb-0">+ New Category</p>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body pb-0">
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="example-text-input" class="form-control-label">Name</label>
@@ -74,7 +74,7 @@
                             </div>
                         </div>
                         <div class="card-footer">
-
+                                <button class="btn btn-dark btn-sm mb-0 w-100">Create</button>
                         </div>
                     </form>
                 </div>
