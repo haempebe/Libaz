@@ -10,16 +10,17 @@ class CategoryController extends Controller
     //
     public function category()
     {
-        $allcategory = category::class;
-        return view('pages.category')->with('allcategory', $allcategory);
+        $allCategory = categoryBook::get();
+        return view("pages.category")->with('allCategory', $allCategory);
     }
     public function store() {
         $attributes = request()->validate([
-            'name' => 'required|max:255|min:2|unique:category,name',
+            'name' => 'required|max:255|min:2|unique:category_book,name',
+        ],[
+            'name.required' => 'category name cannot be blank',
+            'name.unique' => 'The category name has already been taken.'
         ]);
-        $user = categoryBook::create($attributes);
-        auth()->login($user);
-
-        return redirect('/register');
+        categoryBook::create($attributes);
+        return redirect()->to('category')->with('succes', 'added data successfully');
     }
 }

@@ -43,12 +43,10 @@ Route::group(['middleware' => 'guest'], function () {
 
 Route::group(['middleware' => 'admin'], function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
-    Route::get('/register', [RegisterController::class, 'create'])->name('register');
-    Route::post('/register', [RegisterController::class, 'store'])->name('register.perform');
     Route::get('/profile', [UserProfileController::class, 'show'])->name('profile');
     Route::post('/profile', [UserProfileController::class, 'update'])->name('profile.update');
-    Route::get('/{page}', [PageController::class, 'index'])->name('page');
     Route::get('/category', [CategoryController::class, 'category'])->name('category');
-    Route::get('/category', [CategoryController::class, 'store'])->name('category.perform');
+    Route::post('/category', [CategoryController::class, 'store'])->name('category.perform');
+    Route::get('/{page}', [PageController::class, 'index'])->name('page');
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 });

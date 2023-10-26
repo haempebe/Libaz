@@ -13,7 +13,7 @@
   @include font-size($form-select-font-size);
   font-weight: $form-select-font-weight;
   line-height: $form-select-line-height;
-  color: $form-select-color;
+  color: $form-select-dark;
   background-color: $form-select-bg;
   background-image: escape-svg($form-select-indicator);
   background-repeat: no-repeat;
@@ -51,7 +51,7 @@
   // Remove outline from select box in FF
   &:-moz-focusring {
     color: transparent;
-    text-shadow: 0 0 0 $form-select-color;
+    text-shadow: 0 0 0 $form-select-dark;
   }
 }
 

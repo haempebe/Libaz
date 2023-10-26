@@ -13,10 +13,11 @@
                             <div class="row">
                                 <div class="col-8">
                                     <div class="numbers">
-                                        <p class="text-sm mb-0 text-uppercase font-weight-bold">Total Users</p>
+                                        <p class="text-sm mb-0 text-uppercase font-weight-bold">Total Pengguna</p>
                                         <h5 class="font-weight-bolder">
-                                            {{$totalUsers}}
+                                            {{ $totalUsers }}
                                         </h5>
+                                        <p class="mb-0 text-sm">Termasuk Admin</p>
                                     </div>
                                 </div>
                                 <div class="col-4 text-end">
