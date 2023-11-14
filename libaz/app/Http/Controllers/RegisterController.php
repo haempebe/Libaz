@@ -21,8 +21,8 @@ class RegisterController extends Controller
             'terms' => 'required'
         ]);
         $user = User::create($attributes);
-        auth()->login($user);
+        // auth()->login($user);
 
-        return redirect('/register');
+        return redirect('/login');
     }
 }

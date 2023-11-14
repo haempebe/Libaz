@@ -21,12 +21,14 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\users\IndexController;
 
 
-Route::get('/', function () {
-    return redirect('/dashboard');
-})->middleware('auth');
+// Route::get('/', function () {
+//     return redirect('/dashboard');
+// })->middleware('auth');
 
+Route::get('/', [IndexController::class, 'home'])->name('home');
 
 
 Route::group(['middleware' => 'guest'], function () {
@@ -48,5 +50,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/category', [CategoryController::class, 'category'])->name('category');
     Route::post('/category', [CategoryController::class, 'store'])->name('category.perform');
     Route::get('/{page}', [PageController::class, 'index'])->name('page');
+});
+Route::group(['middleware' => 'auth'], function () {
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 });
