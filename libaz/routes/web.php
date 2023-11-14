@@ -29,6 +29,9 @@ use App\Http\Controllers\users\IndexController;
 // })->middleware('auth');
 
 Route::get('/', [IndexController::class, 'home'])->name('home');
+Route::get('/about', function () {
+        return view('users.about');
+    });
 
 Route::group(['middleware' => 'guest'], function () {
     Route::get('/register', [RegisterController::class, 'create'])->name('register');
