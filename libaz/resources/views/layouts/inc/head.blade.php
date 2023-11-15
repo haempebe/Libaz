@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="/img/logo-ct-dark.png">
     <link rel="icon" type="image/png" href="/img/logo-ct-dark.png">
     <title>
-        LIBAZ | @yield('topTitle')
+        @yield('topTitle') | LIBAZ
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />

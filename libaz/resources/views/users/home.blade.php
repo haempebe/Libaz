@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <div class="col-md-8 mx-auto">
+    <div class="col-md-8 mx-auto pt-md-5 pt-0">
         <div id="carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" style="border-radius: 10px">
                 <div class="carousel-item active">
@@ -38,22 +38,22 @@
         </div>
     </div>
 
-    <div class="container my-5">
+    <div class="container mt-5">
         <div class="row">
-            <div class="col-lg-3 col-6 mb-3">
+            <div class="col-lg-3 col-md-6 mb-3">
                 <div class="card">
                     <div class="card-body p-3">
                         <div class="row">
                             <div class="col-8">
                                 <div class="numbers">
-                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Money</p>
+                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Jumlah Pengguna</p>
                                     <h5 class="font-weight-bolder">
-                                        $53,000
+                                        53
                                     </h5>
                                 </div>
                             </div>
                             <div class="col-4 text-end">
-                                <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
+                                <div class="icon icon-shape bg-gradient-info shadow-info text-center rounded-circle">
                                     <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
                                 </div>
                             </div>
@@ -61,20 +61,20 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-6 mb-3">
+            <div class="col-lg-3 col-md-6 mb-3">
                 <div class="card">
                     <div class="card-body p-3">
                         <div class="row">
                             <div class="col-8">
                                 <div class="numbers">
-                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Money</p>
+                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Jumlah Buku</p>
                                     <h5 class="font-weight-bolder">
-                                        $53,000
+                                        53
                                     </h5>
                                 </div>
                             </div>
                             <div class="col-4 text-end">
-                                <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
+                                <div class="icon icon-shape bg-gradient-info shadow-info text-center rounded-circle">
                                     <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
                                 </div>
                             </div>
@@ -82,20 +82,20 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-6 mb-3">
+            <div class="col-lg-3 col-md-6 mb-3">
                 <div class="card">
                     <div class="card-body p-3">
                         <div class="row">
                             <div class="col-8">
                                 <div class="numbers">
-                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Money</p>
+                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Tersering Membaca</p>
                                     <h5 class="font-weight-bolder">
-                                        $53,000
+                                        53
                                     </h5>
                                 </div>
                             </div>
                             <div class="col-4 text-end">
-                                <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
+                                <div class="icon icon-shape bg-gradient-info shadow-info text-center rounded-circle">
                                     <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
                                 </div>
                             </div>
@@ -103,20 +103,20 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-6 mb-3">
+            <div class="col-lg-3 col-md-6 mb-3">
                 <div class="card">
                     <div class="card-body p-3">
                         <div class="row">
                             <div class="col-8">
                                 <div class="numbers">
-                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Money</p>
+                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Terjarang Membaca</p>
                                     <h5 class="font-weight-bolder">
-                                        $53,000
+                                        53
                                     </h5>
                                 </div>
                             </div>
                             <div class="col-4 text-end">
-                                <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
+                                <div class="icon icon-shape bg-gradient-info shadow-info text-center rounded-circle">
                                     <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
                                 </div>
                             </div>
@@ -125,8 +125,134 @@
                 </div>
             </div>
         </div>
-
-        
+        {{-- /Card --}}
     </div>
+
+    {{-- layanan --}}
+    <div>
+        <div class="my-5 col-8 text-center h3 mx-auto border-bottom pb-2">
+            Layanan Kami
+        </div>
+        <div class="bg-dark py-6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="card">
+                            <div class="card-body text-center p-3">
+                                <img class="w-100 border-radius-md p-5" src="/img/logo-ct-dark.png">
+                                <div class="text-sm font-weight-bolder">Keanggotaan</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="card">
+                            <div class="card-body text-center p-3">
+                                <img class="w-100 border-radius-md p-5" src="/img/logo-ct-dark.png">
+                                <div class="text-sm font-weight-bolder">Keanggotaan</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="card">
+                            <div class="card-body text-center p-3">
+                                <img class="w-100 border-radius-md p-5" src="/img/logo-ct-dark.png">
+                                <div class="text-sm font-weight-bolder">Keanggotaan</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="card">
+                            <div class="card-body text-center p-3">
+                                <img class="w-100 border-radius-md p-5" src="/img/logo-ct-dark.png">
+                                <div class="text-sm font-weight-bolder">Keanggotaan</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-7 col-8 text-center h3 mx-auto border-bottom pb-2">
+            Buku Terpopuler
+        </div>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="card shadow-none border">
+                        <div class="card-body text-center p-3">
+                            <img class="w-100 border-radius-md p-5" src="/img/logo-ct-dark.png">
+                            <div class="text-sm font-weight-bolder">Keanggotaan</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="card shadow-none border">
+                        <div class="card-body text-center p-3">
+                            <img class="w-100 border-radius-md p-5" src="/img/logo-ct-dark.png">
+                            <div class="text-sm font-weight-bolder">Keanggotaan</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="card shadow-none border">
+                        <div class="card-body text-center p-3">
+                            <img class="w-100 border-radius-md p-5" src="/img/logo-ct-dark.png">
+                            <div class="text-sm font-weight-bolder">Keanggotaan</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="card shadow-none border">
+                        <div class="card-body text-center p-3">
+                            <img class="w-100 border-radius-md p-5" src="/img/logo-ct-dark.png">
+                            <div class="text-sm font-weight-bolder">Keanggotaan</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-7 col-8 text-center h3 mx-auto border-bottom pb-2">
+            Review Buku
+        </div>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="card shadow-none border">
+                        <div class="card-body text-center p-3">
+                            <img class="w-100 border-radius-md p-5" src="/img/logo-ct-dark.png">
+                            <div class="text-sm font-weight-bolder">Keanggotaan</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="card shadow-none border">
+                        <div class="card-body text-center p-3">
+                            <img class="w-100 border-radius-md p-5" src="/img/logo-ct-dark.png">
+                            <div class="text-sm font-weight-bolder">Keanggotaan</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="card shadow-none border">
+                        <div class="card-body text-center p-3">
+                            <img class="w-100 border-radius-md p-5" src="/img/logo-ct-dark.png">
+                            <div class="text-sm font-weight-bolder">Keanggotaan</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="card shadow-none border">
+                        <img src="/img/logo-ct-dark.png" class="card-img-top" style="max-height: 120px" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
 @endsection
