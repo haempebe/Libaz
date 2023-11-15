@@ -1,10 +1,10 @@
 <!-- Navbar Dark -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white z-index-3 py-3">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white z-index-3 py-3">
     <div class="container">
         <a class="navbar-brand m-0 text-center" href="{{ route('home') }}">
             <div style="height: 2rem">
                 <img src="./img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo">
-                <span class="ms-1 h5 font-weight-bold">LIBAZ</span>
+                <span class="ms-1 h5 font-weight-bold"></span>
             </div>
         </a>
         <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse"
@@ -17,7 +17,7 @@
             </span>
         </button>
         <div class="collapse navbar-collapse" id="navigation">
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
                     <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'home' ? 'p-2 btn-dark text-white' : '' }}"
                         aria-current="page" href="{{ route('home') }}">
