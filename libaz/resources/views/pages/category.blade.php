@@ -2,10 +2,10 @@
 @extends('layouts.app', ['class' => 'g-sidenav-show bg-gray-100'])
 
 @section('content')
+    @include('layouts.navbars.auth.topnav', ['title' => 'Category'])
     <div id="alert">
         @include('components.alert')
     </div>
-    @include('layouts.navbars.auth.topnav', ['title' => 'Category'])
     <div class="container-fluid py-4">
         <div class="row">
             <div class="col-md-8">
@@ -51,11 +51,16 @@
                                                     <span class="btn-inner--icon"><i class="fas fa-edit"></i></span>
                                                     <span class="btn-inner--text"> Edit</span>
                                                 </a>
-                                                <a href="javascript:;"
-                                                    class="btn btn-xs btn-danger mb-0 font-weight-bold text-xs">
-                                                    <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
-                                                    <span class="btn-inner--text"> Delete</span>
-                                                </a>
+                                                <form class="d-inline" onsubmit="return confirm('sure to delete this data')"
+                                                    action="{{ url('category/' . $item->id . '/delete') }}" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-xs btn-danger mb-0 font-weight-bold text-xs">
+                                                        <span class="btn-inner--icon"><i
+                                                                class="fas fa-trash-alt"></i></span>
+                                                        <span class="btn-inner--text"> Delete</span>
+                                                    </button>
+                                                </form>
                                             </td>
                                         </tr>
                                         @php

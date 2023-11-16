@@ -25,6 +25,7 @@ use App\Http\Controllers\users\AboutController;
 use App\Http\Controllers\users\IndexController;
 use App\Http\Controllers\users\LibraryController;
 use App\Http\Controllers\users\ReviewController;
+use App\Models\categoryBook;
 
 // Route::get('/', function () {
 //     return redirect('/dashboard');
@@ -54,6 +55,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('/profile', [UserProfileController::class, 'update'])->name('profile.update');
     Route::get('/category', [CategoryController::class, 'category'])->name('category');
     Route::post('/category', [CategoryController::class, 'store'])->name('category.perform');
+    Route::delete("category/{id}/delete", [CategoryController::class, 'destroy'])->name('profile.destroy');
     Route::get('/{page}', [PageController::class, 'index'])->name('page');
 });
 Route::group(['middleware' => 'auth'], function () {
