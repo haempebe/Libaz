@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <div class="container text-center mt-7">
+    <div class="container text-center">
         <div class="row align-items-center">
             <div class="col-6 h2 text-start">tentang perpustakaan
                 <img class="d-block w-100 mt-5" src="https://i.ibb.co/MCJK9bL/Carousel.png" alt="First slide">

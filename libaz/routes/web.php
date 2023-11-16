@@ -21,17 +21,18 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\users\AboutController;
 use App\Http\Controllers\users\IndexController;
-
+use App\Http\Controllers\users\LibraryController;
 
 // Route::get('/', function () {
 //     return redirect('/dashboard');
 // })->middleware('auth');
 
 Route::get('/', [IndexController::class, 'home'])->name('home');
-Route::get('/about', function () {
-        return view('users.about');
-    });
+Route::get('/library', [LibraryController::class, 'library'])->name('library');
+Route::get('/about', [AboutController::class, 'about'])->name('about');
+
 
 
 Route::group(['middleware' => 'guest'], function () {

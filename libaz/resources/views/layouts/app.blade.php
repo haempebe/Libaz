@@ -10,7 +10,7 @@
             </main>
         @else
             @include('layouts.navbars.users.topnav')
-            <main class="main-content  mt-0">
+            <main class="main-content  mt-0 pt-md-7 pt-6 mt-2">
                 @yield('content')
             </main>
             @include('layouts.footers.users.footer')
@@ -30,6 +30,11 @@
                 </main>
             @endif
         @else
+            @include('layouts.navbars.users.topnav')
+            <main class="main-content  mt-0 pt-md-7 pt-6 mt-2">
+                @yield('content')
+            </main>
+            @include('layouts.footers.users.footer')
         @endif
     @endauth
 

@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <div class="col-md-8 mx-auto pt-md-7 pt-6 mt-2">
+    <div class="col-md-8 mx-auto">
         <div id="carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" style="border-radius: 10px">
                 <div class="carousel-item active">
