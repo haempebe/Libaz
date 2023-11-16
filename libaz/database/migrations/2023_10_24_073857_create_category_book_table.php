@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('category_book', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
+            $table->text('descripsi');
             $table->timestamps();
         });
     }

@@ -45,10 +45,10 @@
                                     <span class="badge badge-sm bg-gradient-success">Online</span>
                                 </td>
                                 <td class="align-middle text-center">
-                                    <span class="text-secondary text-xs font-weight-bold">23/04/18</span>
+                                    <span class="text-secondary text-xs font-weight-bold ">23/04/18</span>
                                 </td>
                                 <td class="align-middle">
-                                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
+                                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs bg-dark"
                                         data-toggle="tooltip" data-original-title="Edit user">
                                         Edit
                                     </a>

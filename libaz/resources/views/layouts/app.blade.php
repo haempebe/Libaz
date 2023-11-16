@@ -15,6 +15,7 @@
             <main class="main-content  mt-0">
                 @yield('content')
             </main>
+            @include('layouts.footers.users.footer')
         @endguest
 @endif
 
@@ -36,6 +37,7 @@
             <main class="main-content  mt-0">
                 @yield('content')
             </main>
+            @include('layouts.footers.users.footer')
         @endif
     @endauth
 
