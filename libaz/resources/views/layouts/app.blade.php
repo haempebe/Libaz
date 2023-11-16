@@ -1,21 +1,24 @@
 @include('layouts.inc.head')
 
-<body class="{{ $class ?? '' }}">
-
-    @guest
-        @if (in_array(request()->route()->getName(),
-                ['sign-in', 'sign-up', 'login', 'register', 'recover-password']))
+@if (in_array(request()->route()->getName(),
+['login', 'register', 'recover-password', 'reset-password']))
+    <body class="{{ $class ?? '' }} bg-dark">
+        @guest
             <main class="main-content  mt-0">
                 @yield('content')
             </main>
-        @else
+        @endguest
+@else
+    <body class="{{ $class ?? '' }} ">
+        @guest
             @include('layouts.navbars.users.topnav')
-            <main class="main-content  mt-0 pt-md-7 pt-6 mt-2">
+            <main class="main-content  mt-0">
                 @yield('content')
             </main>
             @include('layouts.footers.users.footer')
-        @endif
-    @endguest
+        @endguest
+@endif
+
 
     @auth
         @if (auth()->user()->username == 'admin')
@@ -31,7 +34,7 @@
             @endif
         @else
             @include('layouts.navbars.users.topnav')
-            <main class="main-content  mt-0 pt-md-7 pt-6 mt-2">
+            <main class="main-content  mt-0">
                 @yield('content')
             </main>
             @include('layouts.footers.users.footer')

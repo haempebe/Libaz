@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('category_book', function (Blueprint $table) {
+        Schema::create('denda', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
-            $table->text('descripsi');
+            $table->unsignedBigInteger('id_peminjaman');
+            $table->integer('jumlah_denda');
             $table->timestamps();
+            $table->foreign('id_peminjaman')->references('id')->on('peminjaman');
         });
     }
 
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('category_book');
+        Schema::dropIfExists('denda');
     }
 };

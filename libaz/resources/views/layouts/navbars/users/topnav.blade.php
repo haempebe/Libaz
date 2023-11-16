@@ -57,7 +57,7 @@
                                 <i class="fas fa-key me-1"></i> Sign in</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('library') }}" class="btn btn-sm mb-0 me-1 px-3 btn-outline-dark">
+                            <a href="{{ route('register') }}" class="btn btn-sm mb-0 me-1 px-3 btn-outline-dark">
                                 <i class="fas fa-user-circle me-1"></i> Sign Up</a>
                         </li>
                     </div>
