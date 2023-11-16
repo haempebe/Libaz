@@ -1,10 +1,10 @@
 <!-- Navbar Dark -->
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white z-index-3 py-3">
+<nav class="navbar navbar-expand-lg navbar-light bg-white z-index-3 py-3">
     <div class="container">
         <a class="navbar-brand m-0 text-center" href="{{ route('home') }}">
-            <div style="height: 2rem">
+            <div style="height: 1.6rem">
                 <img src="./img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo">
-                <span class="ms-1 h5 font-weight-bold"></span>
+                <span class="ms-1 h6 font-weight-bold">LIBAZ</span>
             </div>
         </a>
         <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse"
@@ -25,75 +25,31 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'library' ? 'p-2 btn-dark text-white' : '' }}"
-                        href="{{ route('library') }}">
-                        Library
+                    <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'register' ? 'p-2 btn-dark text-white' : '' }}"
+                        href="{{ route('logout') }}">
+                        logout
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == '' ? 'p-2 btn-dark text-white' : '' }}"
-                        href="{{ route('library') }}">
-                        E-Book
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'about' ? 'p-2 btn-dark text-white' : '' }}"
-                        href="{{ route('about') }}">
-                        About
+                    <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'login' ? 'p-2 btn-dark text-white' : '' }}"
+                        href="{{ route('category') }}">
+                        Review
                     </a>
                 </li>
             </ul>
             <ul class="navbar-nav d-lg-block d-none">
-                @guest
-                    <div class="d-flex">
-                        <li class="nav-item">
-                            <a href="{{ route('login') }}" class="btn btn-sm mb-0 me-1 px-3 btn-dark">
-                                <i class="fas fa-key me-1"></i> Sign in</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('library') }}" class="btn btn-sm mb-0 me-1 px-3 btn-outline-dark">
-                                <i class="fas fa-user-circle me-1"></i> Sign Up</a>
-                        </li>
-                    </div>
-                @endguest
-                @auth
-                    <div class="dropdown">
-                        <a href="#" id="profileDropdownToggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <div class="d-flex px-2 py-1">
-                                <div>
-                                    <img src="/img/team-2.jpg" class="rounded-circle me-3"height="30" alt="">
-                                </div>
-                                <div class="d-flex flex-column justify-content-center">
-                                    <h6 class="mb-0 text-sm">{{ auth()->user()->username }}</h6>
-                                    <p class="text-xs text-secondary mb-0">{{ auth()->user()->email }}</p>
-                                </div>
-                                <div class="dropdown-toggle" id="toggle"></div>
-                            </div>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="profileDropdownToggle" style="">
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            <li>
-                                <form role="form" method="post" action="{{ route('logout') }}" id="logout-form">
-                                    @csrf
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                        <i class="fa fa-user me-sm-1"></i>
-                                        <span class="d-sm-inline d-none">Log out</span>
-                                    </a>
-                                </form>
-                            </li>
-                        </ul>
-                    </div>
-                @endauth
+                <div class="d-flex">
+                    <li class="nav-item">
+                        <a href="{{ route('login') }}" class="btn btn-sm mb-0 me-1 px-3 btn-dark">
+                            <i class="fas fa-key me-1"></i> Sign in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('register') }}" class="btn btn-sm mb-0 me-1 px-3 btn-outline-dark">
+                            <i class="fas fa-user-circle me-1"></i> Sign Up</a>
+                    </li>
+                </div>
             </ul>
         </div>
     </div>
 </nav>
 <!-- End Navbar -->
-<script>
-    const toggler = document.querySelector("#profileDropdownToggle");
-    toggler.addEventListener("click", function() {
-        document.querySelector("#toggle").classList.toggle("show");
-    });
-</script>
