@@ -25,20 +25,20 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'register' ? 'p-2 btn-dark text-white' : '' }}"
-                        href="{{ route('register') }}">
+                    <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'library' ? 'p-2 btn-dark text-white' : '' }}"
+                        href="{{ route('library') }}">
                         Library
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'register' ? 'p-2 btn-dark text-white' : '' }}"
-                        href="{{ route('register') }}">
+                    <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == '' ? 'p-2 btn-dark text-white' : '' }}"
+                        href="{{ route('library') }}">
                         E-Book
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ str_contains(request()->url(), 'about') == true ? 'p-2 btn-dark text-white' : '' }}"
-                        href="{{ route('page', ['page' => 'about']) }}">
+                    <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'about' ? 'p-2 btn-dark text-white' : '' }}"
+                        href="{{ route('about') }}">
                         About
                     </a>
                 </li>
@@ -51,7 +51,7 @@
                                 <i class="fas fa-key me-1"></i> Sign in</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('register') }}" class="btn btn-sm mb-0 me-1 px-3 btn-outline-dark">
+                            <a href="{{ route('library') }}" class="btn btn-sm mb-0 me-1 px-3 btn-outline-dark">
                                 <i class="fas fa-user-circle me-1"></i> Sign Up</a>
                         </li>
                     </div>
