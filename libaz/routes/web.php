@@ -24,6 +24,7 @@ use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\users\AboutController;
 use App\Http\Controllers\users\IndexController;
 use App\Http\Controllers\users\LibraryController;
+use App\Http\Controllers\users\ReviewController;
 
 // Route::get('/', function () {
 //     return redirect('/dashboard');
@@ -32,7 +33,7 @@ use App\Http\Controllers\users\LibraryController;
 Route::get('/', [IndexController::class, 'home'])->name('home');
 Route::get('/library', [LibraryController::class, 'library'])->name('library');
 Route::get('/about', [AboutController::class, 'about'])->name('about');
-
+Route::get('/review', [ReviewController::class, 'review'])->name('review');
 
 
 Route::group(['middleware' => 'guest'], function () {
