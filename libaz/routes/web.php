@@ -32,6 +32,9 @@ Route::get('/', [IndexController::class, 'home'])->name('home');
 Route::get('/about', function () {
         return view('users.about');
     });
+    Route::get('/request', function () {
+        return view('users.request');
+    });
 
 
 Route::group(['middleware' => 'guest'], function () {
