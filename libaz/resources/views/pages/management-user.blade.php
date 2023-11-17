@@ -40,9 +40,9 @@
                                     <span class="text-secondary text-xs font-weight-bold ">23/04/18</span>
                                 </td>
                                 <td class="align-middle text-center text-sm pt-2">
-                                    <button type="button" class="btn btn-primary">🚫Tolak</button>
-                                    <button type="button" class="btn btn-info">🤝Terima</button>
-                                    <button type="button" class="btn btn-success">Info</button>
+                                    <button type="button" class="btn btn-primary">🚫 Tolak</button>
+                                    <button type="button" class="btn btn-info">🤝 Terima</button>
+                                    <button type="button" class="btn btn-success"> Info</button>
                                 </td>
                                 
                             </tr>

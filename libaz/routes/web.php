@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\carouselController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -54,6 +55,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/category', [CategoryController::class, 'category'])->name('category');
     Route::post('/category', [CategoryController::class, 'store'])->name('category.perform');
     Route::get('/{page}', [PageController::class, 'index'])->name('page');
+    Route::get('/crousel', [carouselController::class,'crousel'])->name('crousel');
 });
 Route::group(['middleware' => 'auth'], function () {
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');
