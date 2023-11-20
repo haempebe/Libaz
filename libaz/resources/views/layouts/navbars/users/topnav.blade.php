@@ -24,12 +24,7 @@
                         Home
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'review' ? 'p-2 btn-dark text-white' : '' }}"
-                        aria-current="page" href="{{ route('review') }}">
-                        Review
-                    </a>
-                </li>
+
                 <li class="nav-item">
                     <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'library' ? 'p-2 btn-dark text-white' : '' }}"
                         href="{{ route('library') }}">
@@ -37,9 +32,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == '' ? 'p-2 btn-dark text-white' : '' }}"
-                        href="{{ route('library') }}">
-                        E-Book
+                    <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'request' ? 'p-2 btn-dark text-white' : '' }}"
+                        href="{{ route('request') }}">
+                        Request
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'review' ? 'p-2 btn-dark text-white' : '' }}"
+                        aria-current="page" href="{{ route('review') }}">
+                        Review
                     </a>
                 </li>
                 <li class="nav-item">
