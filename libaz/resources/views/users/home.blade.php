@@ -39,14 +39,14 @@
     </div>
 
     <div class="container mt-5">
-        <div class="row">
+        <div class="row gx-2">
             <div class="col-lg-3 col-md-6 mb-3">
                 <div class="card">
                     <div class="card-body p-3">
                         <div class="row">
                             <div class="col-8">
                                 <div class="numbers">
-                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Jumlah Pengguna</p>
+                                    <p class="text-sm text-uppercase font-weight-bold">Jumlah Pengguna</p>
                                     <h5 class="font-weight-bolder">
                                         53
                                     </h5>
@@ -67,7 +67,7 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="numbers">
-                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Jumlah Buku</p>
+                                    <p class="text-sm text-uppercase font-weight-bold">Jumlah Buku</p>
                                     <h5 class="font-weight-bolder">
                                         53
                                     </h5>
@@ -88,9 +88,9 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="numbers">
-                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Tersering Membaca</p>
+                                    <p class="text-sm text-uppercase font-weight-bold">Tersering Membaca</p>
                                     <h5 class="font-weight-bolder">
-                                        53
+                                        Alip <small class="p">10x membaca</small>
                                     </h5>
                                 </div>
                             </div>
@@ -109,7 +109,7 @@
                         <div class="row">
                             <div class="col-8">
                                 <div class="numbers">
-                                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Terjarang Membaca</p>
+                                    <p class="text-sm text-uppercase font-weight-bold">Terjarang Membaca</p>
                                     <h5 class="font-weight-bolder">
                                         53
                                     </h5>

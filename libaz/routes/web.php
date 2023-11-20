@@ -33,6 +33,7 @@ use App\Models\categoryBook;
 
 Route::get('/', [IndexController::class, 'home'])->name('home');
 Route::get('/library', [LibraryController::class, 'library'])->name('library');
+Route::get('/library/{id}', [LibraryController::class, 'detail'])->name('detail.library');
 Route::get('/about', [AboutController::class, 'about'])->name('about');
 Route::get('/review', [ReviewController::class, 'review'])->name('review');
 

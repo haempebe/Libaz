@@ -3,7 +3,7 @@
     <div class="container">
         <a class="navbar-brand m-0 text-center" href="{{ route('home') }}">
             <div style="height: 2rem">
-                <img src="./img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo">
+                <img src="{{asset('./img/logo-ct-dark.png')}}" class="navbar-brand-img h-100" alt="main_logo">
                 <span class="ms-1 h5 font-weight-bold"></span>
             </div>
         </a>
