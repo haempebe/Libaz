@@ -5,16 +5,16 @@
 
     <div class="col-12 h3 text-center mt-3" style="font-family: poppins">Buku Terbaru</div>
     <div class="row mx-10">
-        <div class="col-3 px-3"> 
+        <div class="col-3 px-3">
             <img class="d-block w-100 mt-5 rounded-3"
                 src="https://www.bukukita.com/babacms/displaybuku/71047_f.jpg"></div>
-        <div class="col-3 px-3"> 
+        <div class="col-3 px-3">
             <img class="d-block w-100 mt-5 rounded-3"
                 src="https://www.bukukita.com/babacms/displaybuku/71047_f.jpg"></div>
-        <div class="col-3 px-3"> 
+        <div class="col-3 px-3">
             <img class="d-block w-100 mt-5 rounded-3"
                 src="https://www.bukukita.com/babacms/displaybuku/71047_f.jpg"></div>
-        <div class="col-3 px-3"> 
+        <div class="col-3 px-3">
             <img class="d-block w-100 mt-5 rounded-3"
                 src="https://www.bukukita.com/babacms/displaybuku/71047_f.jpg"></div>
     </div>

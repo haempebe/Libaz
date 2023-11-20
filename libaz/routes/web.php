@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Models\categoryBook;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ResetPassword;
 use App\Http\Controllers\ChangePassword;
 use App\Http\Controllers\HomeController;
@@ -23,9 +24,9 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\users\AboutController;
 use App\Http\Controllers\users\IndexController;
-use App\Http\Controllers\users\LibraryController;
 use App\Http\Controllers\users\ReviewController;
-use App\Models\categoryBook;
+use App\Http\Controllers\users\LibraryController;
+use App\Http\Controllers\users\requestController;
 
 // Route::get('/', function () {
 //     return redirect('/dashboard');
@@ -36,6 +37,7 @@ Route::get('/library', [LibraryController::class, 'library'])->name('library');
 Route::get('/library/{id}', [LibraryController::class, 'detail'])->name('detail.library');
 Route::get('/about', [AboutController::class, 'about'])->name('about');
 Route::get('/review', [ReviewController::class, 'review'])->name('review');
+Route::get('/request',[requestController::class, 'request'])->name('request');
 
 
 Route::group(['middleware' => 'guest'], function () {
