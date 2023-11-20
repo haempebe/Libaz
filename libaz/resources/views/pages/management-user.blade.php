@@ -25,27 +25,21 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($allUsers as $item)   
                             <tr>
-                                <td>
-                                    <div class="d-flex px-2 py-1">
+                                <td>{{ $item->id }}</td>
+                                <td>{{ $item->name }}</td>
+                                <td>{{ $item->email }}</td>
 
-                                        <div class="d-flex flex-column justify-content-center mb-3 ">
-                                            <h6 class="mb-0 text-sm mt-2">1</h6>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="text-xs text-secondary mb-0">hamidzan</p>
-                                </td>
-                                <td class="align-middle text-center">
-                                    <span class="text-secondary text-xs font-weight-bold ">23/04/18</span>
-                                </td>
+                                
                                 <td class="align-middle text-center text-sm pt-2">
-                                    <button type="button" class="btn btn-primary">🚫 Tolak</button>
-                                    <button type="button" class="btn btn-info">🤝 Terima</button>
-                                    <button type="button" class="btn btn-success"> Info</button>
+                                    <button type="button" class="btn btn-primary" href="{{-- route('admin.users.edit', $user->id) --}}">🚫 Tolak</button>
+                                    <button type="button" class="btn btn-info" action="{{-- route('admin.users.destroy', $user->id) --}}" >🤝 Terima</button>
+                                    <button type="submit" onclick="return confirm('Apakah Anda yakin ingin menghapus?')" class="btn btn-success"> Info</button>
                                 </td>
                                 
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

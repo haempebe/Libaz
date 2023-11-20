@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\carouselController;
+use App\Http\Controllers\management;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,8 +19,11 @@ use App\Http\Controllers\ChangePassword;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\managementUsers;
+use App\Http\Controllers\carouselController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\users\AboutController;
 use App\Http\Controllers\users\IndexController;
@@ -54,9 +57,15 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('/profile', [UserProfileController::class, 'update'])->name('profile.update');
     Route::get('/category', [CategoryController::class, 'category'])->name('category');
     Route::post('/category', [CategoryController::class, 'store'])->name('category.perform');
+    
+    Route::get('/image/create', [ImageController::class, 'create'])->name('image.create');
+    Route::post('/image/store', [ImageController::class, 'store']);
+
+    route::get('/management-users', [managementUsers::class, 'index'])->name('management');
+
     Route::get('/{page}', [PageController::class, 'index'])->name('page');
-    Route::get('/crousel', [carouselController::class,'crousel'])->name('crousel');
 });
+
 Route::group(['middleware' => 'auth'], function () {
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 });
