@@ -5,7 +5,6 @@
             aria-hidden="true" id="iconSidenav"></i>
         <a class="navbar-brand m-0 text-center" href="{{ route('dashboard') }}">
             <img src="./img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo">
-            <span class="ms-1 h4 font-weight-bold">LIBAZ</span>
         </a>
     </div>
     <hr class="horizontal dark mt-0">

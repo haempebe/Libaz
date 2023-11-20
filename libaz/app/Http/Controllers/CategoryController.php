@@ -13,14 +13,20 @@ class CategoryController extends Controller
         $allCategory = categoryBook::get();
         return view("pages.category")->with('allCategory', $allCategory);
     }
-    public function store() {
+    public function store()
+    {
         $attributes = request()->validate([
             'name' => 'required|max:255|min:2|unique:category_book,name',
-        ],[
+        ], [
             'name.required' => 'category name cannot be blank',
             'name.unique' => 'The category name has already been taken.'
         ]);
         categoryBook::create($attributes);
         return redirect()->to('category')->with('succes', 'added data successfully');
+    }
+    public function destroy($id)
+    {
+        categoryBook::where('id', $id)->delete();
+        return redirect()->to('category')->with('succes', 'The data has been successfully deleted');
     }
 }

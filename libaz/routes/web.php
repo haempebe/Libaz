@@ -21,17 +21,21 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\users\AboutController;
 use App\Http\Controllers\users\IndexController;
-
+use App\Http\Controllers\users\LibraryController;
+use App\Http\Controllers\users\ReviewController;
+use App\Models\categoryBook;
 
 // Route::get('/', function () {
 //     return redirect('/dashboard');
 // })->middleware('auth');
 
 Route::get('/', [IndexController::class, 'home'])->name('home');
-Route::get('/about', function () {
-        return view('users.about');
-    });
+Route::get('/library', [LibraryController::class, 'library'])->name('library');
+Route::get('/library/{id}', [LibraryController::class, 'detail'])->name('detail.library');
+Route::get('/about', [AboutController::class, 'about'])->name('about');
+Route::get('/review', [ReviewController::class, 'review'])->name('review');
 
 
 Route::group(['middleware' => 'guest'], function () {
@@ -52,6 +56,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('/profile', [UserProfileController::class, 'update'])->name('profile.update');
     Route::get('/category', [CategoryController::class, 'category'])->name('category');
     Route::post('/category', [CategoryController::class, 'store'])->name('category.perform');
+    Route::delete("category/{id}/delete", [CategoryController::class, 'destroy'])->name('profile.destroy');
     Route::get('/{page}', [PageController::class, 'index'])->name('page');
 });
 Route::group(['middleware' => 'auth'], function () {
