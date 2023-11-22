@@ -32,7 +32,7 @@
   --bs-secondary: #8392ab;
   --bs-success: #2dce89;
   --bs-info: #11cdef;
-  --bs-warning: #fb6340;
+  --bs-warning: #fb8c00;
   --bs-danger: #f5365c;
   --bs-light: #e9ecef;
   --bs-dark: #344767;
@@ -9398,7 +9398,7 @@ textarea.form-control-lg {
 }
 
 .text-warning {
-  color: #fb6340 !important;
+  color: #fb8c00 !important;
 }
 
 .text-danger {

@@ -11,7 +11,8 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link {{ Route::currentRouteName() == 'dashboard' ? 'active' : '' }}" href="{{ route('dashboard') }}">
+                <a class="nav-link {{ Route::currentRouteName() == 'dashboard' ? 'active' : '' }}"
+                    href="{{ route('dashboard') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-tv-2 text-dark text-sm opacity-10"></i>
@@ -23,7 +24,8 @@
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Users</h6>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Route::currentRouteName() == 'profile' ? 'active' : '' }}" href="{{ route('profile') }}">
+                <a class="nav-link {{ Route::currentRouteName() == 'profile' ? 'active' : '' }}"
+                    href="{{ route('profile') }}">
                     <div
                         class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
@@ -32,8 +34,10 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ str_contains(request()->url(), 'management-user') == true ? 'active' : '' }}" href="{{ route('page', ['page' => 'management-user']) }}">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <a class="nav-link {{ str_contains(request()->url(), 'management-user') == true ? 'active' : '' }}"
+                    href="{{ route('page', ['page' => 'management-user']) }}">
+                    <div
+                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="fas fa-users text-dark text-sm opacity-10"></i>
                     </div>
                     <span class="nav-link-text ms-1">Management</span>
@@ -43,8 +47,30 @@
                 <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">pages</h6>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ str_contains(request()->url(), 'category') == true ? 'active' : '' }}" href="{{ route('page', ['page' => 'category']) }}">
-                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <a data-bs-toggle="collapse" href="#Books" class="nav-link collapsed" aria-controls="Books"
+                    role="button" aria-expanded="false">
+                    <div class="icon icon-shape icon-sm text-center d-flex align-items-center justify-content-center">
+                        <i class="ni ni-ungroup text-warning text-sm opacity-10"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Pages</span>
+                </a>
+                <div class="collapse" id="Books" style="">
+                    <ul class="nav ms-4">
+                        <li class="nav-item ">
+                            <a class="nav-link"
+                                href="https://argon-dashboard-pro-laravel.creative-tim.com/user-profile">
+                                <span class="sidenav-mini-icon"> U </span>
+                                <span class="sidenav-normal"> User Profile </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ str_contains(request()->url(), 'category') == true ? 'active' : '' }}"
+                    href="{{ route('page', ['page' => 'category']) }}">
+                    <div
+                        class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="ni ni-bullet-list-67 text-dark text-sm opacity-10"></i>
                     </div>
                     <span class="nav-link-text ms-1">Category</span>

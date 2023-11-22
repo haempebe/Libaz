@@ -98,9 +98,11 @@
     </div>
 </nav>
 <!-- End Navbar -->
+@section('scriptNav')
 <script>
     const toggler = document.querySelector("#profileDropdownToggle");
     toggler.addEventListener("click", function() {
         document.querySelector("#toggle").classList.toggle("show");
     });
 </script>
+@endsection

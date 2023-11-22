@@ -3,7 +3,7 @@
 
 @section('content')
 
-  
+
     <div class="container text-center">
         <div class="row align-items-center border-bottom py-5">
             <div class="col-5 h2 text-start">tentang perpustakaan
@@ -32,16 +32,16 @@
         <div class="row">
             <div class="col-12" style="text-align: left;">1. warga sekolah selain warga sekolah dilarang meminjam buku</div>
             <div class="col-12" style="text-align: left;">2. siswa dapat meminjam hanya 1 buku </div>
-            <div class="col-12" style="text-align: left;" style= font-size: 12px;>3. peminjaman harus dilalakukan online melalui website ini 
+            <div class="col-12" style="text-align: left;" style= font-size: 12px;>3. peminjaman harus dilalakukan online melalui website ini
                 apabila ada kerusakan pada buku saat peminjaman segera lapor ke guru</div>
             <div class="col-12" style="text-align: left;">4. tidak boleh melakukan peminjaman menggunakan akun orang lain</div>
 
-              
+
 
         </div>
         <div class="col-3 h5 ms-2 ps-1 mt-3">join membership</div>
         <div class="col-lg-12" style="text-align: left;">klik link ini untuk join <a href="#"><U>klik disini</U></a></div>
-        
+
         <div class="col-3 h5 ms-3 mt-3">contact information</div>
         <div class="col-6" style="text-align: left;">
             <div class="h6"> Alamat :</div>
@@ -52,23 +52,23 @@ Jl. Raya Cikampak Cicadas, RT.1/RW.1, Cicadas, Kec. Ciampea, Kabupaten Bogor, Ja
     <div class="h6 mt-3">Email :</div>
 <div class="col-6 " style="text-align: left;">
     libaz@smk.ti.bazma</div>
-    
+
 
         </div>
     </div>
-    <div class="col-lg-12 h6" style="text-align: right;"><a href="#"><U>perjalanan singkat</U></a></div>
-    
+    <div class="col-lg-10 text-end h6"><a href="#"><U>perjalanan singkat</U></a></div>
+
     <div class="row mx-10">
-        <div class="col-3 px-3"> 
+        <div class="col-3 px-3">
             <img class="d-block w-100 mt-5 rounded-3"
                 src="https://www.bukukita.com/babacms/displaybuku/71047_f.jpg"></div>
-        <div class="col-3 px-3"> 
+        <div class="col-3 px-3">
             <img class="d-block w-100 mt-5 rounded-3"
                 src="https://www.bukukita.com/babacms/displaybuku/71047_f.jpg"></div>
-        <div class="col-3 px-3"> 
+        <div class="col-3 px-3">
             <img class="d-block w-100 mt-5 rounded-3"
                 src="https://www.bukukita.com/babacms/displaybuku/71047_f.jpg"></div>
-        <div class="col-3 px-3"> 
+        <div class="col-3 px-3">
             <img class="d-block w-100 mt-5 rounded-3"
                 src="https://www.bukukita.com/babacms/displaybuku/71047_f.jpg"></div>
     <div class="col-2 h4 mt-5 " style="text-align: left;">Image Tim</div>

@@ -16,7 +16,7 @@ class CategoryController extends Controller
     public function store()
     {
         $attributes = request()->validate([
-            'name' => 'required|max:255|min:2|unique:category_book,name',
+            'name' => 'required|max:50|min:2|unique:category_book,name',
         ], [
             'name.required' => 'category name cannot be blank',
             'name.unique' => 'The category name has already been taken.'
