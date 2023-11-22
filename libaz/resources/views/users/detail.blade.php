@@ -56,13 +56,27 @@
                                 <p>stok: 12</p>
                             </div>
                             <div class="col-6 align-items-center">
-                                <div class="card text-center p-2 shadow bg-dark text-white font-weight-bold">
+                                <div class="card text-center p-2 shadow bg-gradient-success text-white font-weight-bold">
                                     Tersedia
+                                </div>
+                                <div class="card text-center p-2 shadow bg-gradient-danger text-white font-weight-bold">
+                                    Habis
                                 </div>
                             </div>
                         </div>
                             <h6>Position: </h6>
-                            <p>a</p>
+                            <table class="table align-items-center">
+                                <tbody>
+                                    <tr>
+                                        <td>Rak</td>
+                                        <td>: 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tingkat</td>
+                                        <td>: 1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         <button class="btn btn-dark w-100">pinjam</button>
 
                     </div>
