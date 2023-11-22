@@ -33,7 +33,12 @@
 
                                 
                                 <td class="align-middle text-center text-sm pt-2">
-                                    <button type="button" class="btn btn-primary" href="{{-- route('admin.users.edit', $user->id) --}}">🚫 Tolak</button>
+                                    <form class="d-inline" onsubmit="return confirm('sure to delete this data')"
+                                                    action="{{ url('management-user/' . $item->id . '/delete') }}" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="delete" class="btn btn-primary">🚫 Tolak</button>
+                                                </form>
                                     <button type="button" class="btn btn-info" action="{{-- route('admin.users.destroy', $user->id) --}}" >🤝 Terima</button>
                                     <button type="submit" onclick="return confirm('Apakah Anda yakin ingin menghapus?')" class="btn btn-success"> Info</button>
                                 </td>

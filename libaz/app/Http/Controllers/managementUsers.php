@@ -11,4 +11,10 @@ class managementUsers extends Controller
         $allUsers = User::get();
         return view('pages.management-user')->with('allUsers', $allUsers);
     }
+
+    public function destroy($id)
+    {
+        User::where('id', $id)->delete();
+        return redirect()->to('pages.management-user')->with('succes', 'The data has been successfully deleted', );
+    }
 }
