@@ -9,13 +9,13 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="row">
-                            <div class="h3" style="text-align: left;">peraturan perpustakaan</div>
+                            <div class="h3" style="text-align: left;">Keanggotaan</div>
                             <div class="col-lg-12 mb-2" style="text-align: left;">Untuk menjadi anggota LiBaz
                                 Perpustakaan
                                 Digital SMK TI BAZMA, Peserta Didik, Tenaga Pendidik, dan Kependidikan harus memenuhi
                                 beberapa persyaratan kanggotaan berikut:</div>
                             <br>
-                            <div class="h4" style="text-align: left;">peraturan perpustakaan</div>
+                            <div class="h4" style="text-align: left;">Syarat dan ketentuan Keanggotaan</div>
                             <div class="col-lg-12 mb-2" style="text-align: left;">1. Hanya Peserta Didik, Tenaga
                                 Pendidik,
                                 dan Kependidikan SMK TI BAZMA yang memenuhi syarat untuk menjadi anggota LiBaz.
@@ -42,8 +42,11 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="card py-0 p-3">
-                            <div class="h3 my-4" style="text-align: left;">peraturan perpustakaan</div>
+                        <div class="card py-0 p-3"
+                            style="border-radius: 8px; box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);">
+                            <div class="h2 my-4" style="text-align: left;">ISI FORMULIR KEANGGOTAAN
+                                <br> DI SINI
+                            </div>
                             <div class="form-floating mb-3">
                                 <input type="name" class="form-control" id="floatingInput"
                                     placeholder="name@example.com">
@@ -58,9 +61,9 @@
                                     placeholder="Password">
                                 <label for="floatingPassword">Password</label>
                             </div>
-                             <button class="btn btn-dark">Daftar</button>
+                            <button class="btn btn-dark">Daftar</button>
                         </div>
-                       
+
                     </div>
                 </div>
             </div>
