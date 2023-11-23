@@ -19,10 +19,10 @@ class managementUsers extends Controller
         return redirect()->route('management')->with('succes', 'The data has been successfully deleted', );
     }
     
-    public function lihat($id)
+    public function show($id)
     {
         $allUsers = User::findOrFail($id);
-        
-        return view('pages.tampil', compact('management'));
+        // dd($allUsers->email);
+        return view('pages.tampil')->with('allUsers', $allUsers);
     }
 }

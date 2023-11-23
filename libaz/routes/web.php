@@ -64,11 +64,9 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('/image/store', [ImageController::class, 'store']);
 
     Route::get('/management-users', [managementUsers::class, 'index'])->name('management');
-
-
     Route::delete('management-user/{id}/delete', [managementUsers::class, 'destroy'])->name('management.destroy');
 
-    Route::get('/management-user/{user-id}/show', [managementUsers::class, 'show'])->name('management.show');
+    Route::get('/management-user/{id}', [managementUsers::class, 'show'])->name('management.show');
 
     Route::get('/{page}', [PageController::class, 'index'])->name('page');
 });

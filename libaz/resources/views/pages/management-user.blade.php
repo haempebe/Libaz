@@ -18,7 +18,7 @@
                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                 Nama</th>
                             <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                Time</th>
+                                Email</th>
                             <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                 Ection</th>
                             <th class="text-secondary opacity-7"></th>
@@ -39,10 +39,13 @@
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-primary">🚫 Tolak</button>
                                 </form>
-                                <button type="button" class="btn btn-info"
-                                    action="{{-- route('/tampil', $user->id)--}}">🤝 Terima</button>
-                                <button type="submit" class="btn btn-success "
-                                    href="{{ route('management.show', $item->id) }}"> Info</button>
+                                <a href="">
+                                    <button type="button" class="btn btn-info"
+                                        action="{{-- route('/tampil', $user->id)--}}">🤝 Terima</button>
+                                </a>
+                                <a href="{{route('management.show', $item->id)}}">
+                                    <button type="submit" class="btn btn-success "> Info</button>
+                                </a>
 
                             </td>
 
