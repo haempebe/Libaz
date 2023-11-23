@@ -14,7 +14,15 @@ class managementUsers extends Controller
 
     public function destroy($id)
     {
-        User::where('id', $id)->delete();
-        return redirect()->to('pages.management-user')->with('succes', 'The data has been successfully deleted', );
+        $allUsers = User::findOrFail($id);
+        $allUsers->delete();
+        return redirect()->route('management')->with('succes', 'The data has been successfully deleted', );
+    }
+    
+    public function lihat($id)
+    {
+        $allUsers = User::findOrFail($id);
+        
+        return view('pages.tampil', compact('management'));
     }
 }

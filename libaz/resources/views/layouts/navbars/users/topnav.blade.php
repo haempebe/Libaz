@@ -42,6 +42,12 @@
                         About
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'anggota' ? 'p-2 btn-dark text-white' : '' }}"
+                        href="{{ route('anggota') }}">
+                        keanggotaan
+                    </a>
+                </li>
             </ul>
             <ul class="navbar-nav d-lg-block d-none">
                 @guest

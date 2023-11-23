@@ -24,6 +24,7 @@ use App\Http\Controllers\carouselController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\keanggotaanController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\users\AboutController;
 use App\Http\Controllers\users\IndexController;
@@ -36,6 +37,7 @@ use App\Http\Controllers\users\LibraryController;
 Route::get('/', [IndexController::class, 'home'])->name('home');
 Route::get('/library', [LibraryController::class, 'library'])->name('library');
 Route::get('/about', [AboutController::class, 'about'])->name('about');
+Route::get('/keanggotaan', [keanggotaanController::class, 'anggota'])->name('anggota');
 
 
 
@@ -57,13 +59,16 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('/profile', [UserProfileController::class, 'update'])->name('profile.update');
     Route::get('/category', [CategoryController::class, 'category'])->name('category');
     Route::post('/category', [CategoryController::class, 'store'])->name('category.perform');
-    
+
     Route::get('/image/create', [ImageController::class, 'create'])->name('image.create');
     Route::post('/image/store', [ImageController::class, 'store']);
 
-    route::get('/management-users', [managementUsers::class, 'index'])->name('management');
-    Route::delete("management-user/{id}/delete", [managementUsers::class, 'destroy'])->name('management.destroy');
+    Route::get('/management-users', [managementUsers::class, 'index'])->name('management');
 
+
+    Route::delete('management-user/{id}/delete', [managementUsers::class, 'destroy'])->name('management.destroy');
+
+    Route::get('/management-user/{user-id}/show', [managementUsers::class, 'show'])->name('management.show');
 
     Route::get('/{page}', [PageController::class, 'index'])->name('page');
 });
