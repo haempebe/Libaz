@@ -3,7 +3,7 @@
     <div class="container">
         <a class="navbar-brand m-0 text-center" href="{{ route('home') }}">
             <div style="height: 2rem">
-                <img src="./img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo">
+                <img src="{{asset('./img/logo-ct-dark.png')}}" class="navbar-brand-img h-100" alt="main_logo">
                 <span class="ms-1 h5 font-weight-bold"></span>
             </div>
         </a>
@@ -24,6 +24,7 @@
                         Home
                     </a>
                 </li>
+
                 <li class="nav-item">
                     <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'library' ? 'p-2 btn-dark text-white' : '' }}"
                         href="{{ route('library') }}">
@@ -31,9 +32,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == '' ? 'p-2 btn-dark text-white' : '' }}"
-                        href="{{ route('library') }}">
-                        E-Book
+                    <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'request' ? 'p-2 btn-dark text-white' : '' }}"
+                        href="{{ route('request') }}">
+                        Request
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'review' ? 'p-2 btn-dark text-white' : '' }}"
+                        aria-current="page" href="{{ route('review') }}">
+                        Review
                     </a>
                 </li>
                 <li class="nav-item">

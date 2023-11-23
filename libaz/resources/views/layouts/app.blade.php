@@ -12,7 +12,7 @@
     <body class="{{ $class ?? '' }} ">
         @guest
             @include('layouts.navbars.users.topnav')
-            <main class="main-content  mt-0">
+            <main class="main-content pt-md-6 pt-6 mt-2">
                 @yield('content')
             </main>
             @include('layouts.footers.users.footer')
@@ -34,7 +34,7 @@
             @endif
         @else
             @include('layouts.navbars.users.topnav')
-            <main class="main-content  mt-0">
+            <main class="main-content pt-md-6 pt-6 mt-2">
                 @yield('content')
             </main>
             @include('layouts.footers.users.footer')

@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\management;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ResetPassword;
 use App\Http\Controllers\ChangePassword;
 use App\Http\Controllers\HomeController;
@@ -28,7 +28,9 @@ use App\Http\Controllers\keanggotaanController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\users\AboutController;
 use App\Http\Controllers\users\IndexController;
+use App\Http\Controllers\users\ReviewController;
 use App\Http\Controllers\users\LibraryController;
+use App\Http\Controllers\users\requestController;
 
 // Route::get('/', function () {
 //     return redirect('/dashboard');
@@ -36,9 +38,11 @@ use App\Http\Controllers\users\LibraryController;
 
 Route::get('/', [IndexController::class, 'home'])->name('home');
 Route::get('/library', [LibraryController::class, 'library'])->name('library');
+Route::get('/library/{id}', [LibraryController::class, 'detail'])->name('detail.library');
 Route::get('/about', [AboutController::class, 'about'])->name('about');
+Route::get('/review', [ReviewController::class, 'review'])->name('review');
+Route::get('/request',[requestController::class, 'request'])->name('request');
 Route::get('/keanggotaan', [keanggotaanController::class, 'anggota'])->name('anggota');
-
 
 
 Route::group(['middleware' => 'guest'], function () {
@@ -59,6 +63,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('/profile', [UserProfileController::class, 'update'])->name('profile.update');
     Route::get('/category', [CategoryController::class, 'category'])->name('category');
     Route::post('/category', [CategoryController::class, 'store'])->name('category.perform');
+    Route::delete("category/{id}/delete", [CategoryController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/image/create', [ImageController::class, 'create'])->name('image.create');
     Route::post('/image/store', [ImageController::class, 'store']);

@@ -2,16 +2,15 @@
 @extends('layouts.app')
 
 @section('content')
-<main class="main-content mt-10 bg-dark">
+<main class="main-content mt-9 bg-dark">
     <div class="container ">
             <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
                 <div class="card z-index-0">
                     <div class="card-header text-center pt-4">
                         <a href="/">
-                            <img src="./img/favicon.png" class="navbar-brand-img" width="90" height="105" alt="main_logo">
+                            <img src="./img/favicon.png" class="navbar-brand-img" style="max-height: 150px" alt="main_logo">
                         </a>
-                        <h5 class="mb-3">Perpustakaan SMK TI BAZMA</h5>
-                        <h5>Sigin</h5>
+                        <h3>Sign in</h3>
                     </div>
                             <div class="card-body">
                                 <form role="form" method="POST" action="{{ route('login.perform') }}">
