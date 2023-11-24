@@ -7,13 +7,11 @@
     <div class="container text-center">
         <div class="row align-items-center border-bottom py-5">
             <div class="col-5 h2 text-start">tentang perpustakaan
-                <img class="d-block w-100 mt-5 rounded-2 " src="https://asset.kompas.com/crops/fPl5r1G3KXbskdrjrJxk1InCebc=/429x39:5529x3439/780x390/data/photo/2021/05/10/609931bb5334c.jpg">
+                <img src="./img/illustrations/image/logo-ct-dark.png" alt="logo libaz" class="w-70 mt-5">
             </div>
             <div class="col-6 mt-7 px-7 text-break  ">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus alias omnis deleniti repellendus fugiat. At
-                exercitationem excepturi, officiis est reprehenderit harum expedita quibusdam sit laudantium quae libero
-                magnam quisquam illum.
-            </div>
+                LiBaz adalah platform Perpustakaan Digital SMK TI BAZMA, memadukan literasi dengan teknologi modern. Disini siswa dapat menjelajahi koleksi buku yang beragam, menjadikan proses pembelajaran lebih dinamis dan terkini. Untuk meningkatkan aksesibilitas, kami menyediakan media peminjaman buku digital, memudahkan siswa untuk mengakses dan menikmati bahan bacaan kapan saja.Berbagai rekomendasi buku-buku yang relevan dan menarik disesuaikan dengan minat juga kebutuhan belajar masing-masing Peserta Didik sehingga dapat meningkatkan minat literasi. LiBaz bukan hanya tempat untuk membaca, tetapi juga untuk memperluas wawasan dan mendukung pembelajaran. Selamat mengeksplorasi dan menikmati keberagaman pengetahuan di Perpustakaan Digital kami!
+            </div><div class="col-5 h2 text-start">libaz hadir sebagai solusi</div>
             <div class="border border-dark border-3 opacity-50 mt-7"></div>
         </div>
         <div class="col-6 h3" style="text-align: left;">informasi perpustakaan:</div>
