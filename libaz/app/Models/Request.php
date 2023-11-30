@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class categoryBook extends Model
+class Request_book extends Model
 {
     use HasFactory;
-    protected $table = 'category_book';
-    
-    protected $fillable = ['name'];
+    protected $table = 'Request_book';
+    protected $fillable = ['name', 'namaBuku', 'DeskripsiBuku', 'alasan'];
 }

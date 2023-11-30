@@ -8,16 +8,16 @@
 @include('layouts.navbars.auth.topnav', ['title' => 'crousel'])
 <div class="container-fluid py-4">
 
-<h2>Upload Image</h2>
-
-    
+    <h2>Upload Image</h2>
 
 
 
 
-    <div class="row row-cols-2 row-cols-md-2 g-4">
-        <div class="col">
-            <div class="card" style="width: 45rem;">
+
+
+    <div class="row">
+        <div class="col-lg-6 col-12 mb-3">
+            <div class="card" class="w-auto">
                 <img src="https://i.ibb.co/MCJK9bL/Carousel.png" class="card-img-top" alt="...">
                 <div class="card-body ">
                     <a href="#" class="btn btn-dark">Terapkan</a>
@@ -25,8 +25,8 @@
                 </div>
             </div>
         </div>
-        <div class="col">
-            <div class="card" style="width: 45rem;">
+        <div class="col-lg-6 col-12 mb-3">
+            <div class="card" class="w-auto">
                 <img src="https://i.ibb.co/MCJK9bL/Carousel.png" class="card-img-top" alt="...">
                 <div class="card-body ">
                     <a href="#" class="btn btn-dark">Terapkan</a>
@@ -34,8 +34,8 @@
                 </div>
             </div>
         </div>
-        <div class="col">
-            <div class="card" style="width: 45rem;">
+        <div class="col-lg-6 col-12 mb-3">
+            <div class="card" class="w-auto">
                 <img src="https://i.ibb.co/MCJK9bL/Carousel.png" class="card-img-top" alt="...">
                 <div class="card-body ">
                     <a href="#" class="btn btn-dark">Terapkan</a>
@@ -43,8 +43,8 @@
                 </div>
             </div>
         </div>
-        <div class="col">
-            <div class="card" style="width: 45rem;">
+        <div class="col-lg-6 col-12 mb-3">
+            <div class="card" class="w-auto">
                 <img src="https://i.ibb.co/MCJK9bL/Carousel.png" class="card-img-top" alt="...">
                 <div class="card-body ">
                     <a href="#" class="btn btn-dark">Terapkan</a>
@@ -53,18 +53,10 @@
             </div>
         </div>
 
-    @if(session('success'))
+        @if(session('success'))
         <p style="color:green;">{{ session('success') }}</p>
-    @endif
+        @endif
 
-    <form action="/image/store" method="post" enctype="multipart/form-data">
-        @csrf
-        <label for="image">Image:</label>
-        <input type="file" name="image" required>
-        <br>
-        <button type="submit">Upload</button>
-        
-    </form>
     </div>
 
     @include('layouts.footers.auth.footer')

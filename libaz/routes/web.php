@@ -13,17 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ResetPassword;
 use App\Http\Controllers\ChangePassword;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\managementUsers;
-use App\Http\Controllers\carouselController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\infoController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\keanggotaanController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\users\AboutController;
@@ -41,13 +39,15 @@ Route::get('/library', [LibraryController::class, 'library'])->name('library');
 Route::get('/library/{id}', [LibraryController::class, 'detail'])->name('detail.library');
 Route::get('/about', [AboutController::class, 'about'])->name('about');
 Route::get('/review', [ReviewController::class, 'review'])->name('review');
-Route::get('/request',[requestController::class, 'request'])->name('request');
+Route::get('/request', [requestController::class, 'request'])->name('request.book');
+Route::post('/request_book', [requestController::class, 'createBook'])->name('createBook');
 Route::get('/keanggotaan', [keanggotaanController::class, 'anggota'])->name('anggota');
+Route::post('/keanggotaan', [keanggotaanController::class, 'store'])->name('anggota.perform');
+Route::get('/register', [RegisterController::class, 'create'])->name('register');
+Route::post('/register', [RegisterController::class, 'store'])->name('register.perform');
 
 
 Route::group(['middleware' => 'guest'], function () {
-    Route::get('/register', [RegisterController::class, 'create'])->name('register');
-    Route::post('/register', [RegisterController::class, 'store'])->name('register.perform');
     Route::get('/login', [LoginController::class, 'show'])->name('login');
     Route::post('/login', [LoginController::class, 'login'])->name('login.perform');
     Route::get('/reset-password', [ResetPassword::class, 'show'])->name('reset-password');
@@ -66,16 +66,23 @@ Route::group(['middleware' => 'admin'], function () {
     Route::delete("category/{id}/delete", [CategoryController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/image/create', [ImageController::class, 'create'])->name('image.create');
-    Route::post('/image/store', [ImageController::class, 'store']);
 
     Route::get('/management-users', [managementUsers::class, 'index'])->name('management');
     Route::delete('management-user/{id}/delete', [managementUsers::class, 'destroy'])->name('management.destroy');
+    Route::delete('users{id}/delete', [managementUsers::class, 'delete'])->name('management.delete');
 
-    Route::get('/management-user/{id}', [managementUsers::class, 'show'])->name('management.show');
+    
+
+    Route::post('/management-user-tolak',[managementUsers::class, 'penolakan'])->name('penolakan');
+    Route::get('/management-user-tolak/{id}', [managementUsers::class, 'show'])->name('management.show');
+    Route::get('/management-user-terima/{id}', [managementUsers::class, 'view'])->name('management.view');
+
+    Route::get('/management-user-info', [infoController::class, 'info'])->name('management.info');
+    Route::get('/management-user-info/{id}', [infoController::class, 'show'])->name('management.info');
 
     Route::get('/{page}', [PageController::class, 'index'])->name('page');
 });
 
-Route::group(['middleware' => 'auth'], function () {
+    Route::group(['middleware' => 'auth'], function () {
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 });
