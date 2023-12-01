@@ -2,34 +2,24 @@
 @extends('layouts.app')
 
 @section('content')
-
-    <div class="col-12 h3 text-center mt-3" style="font-family: poppins">Buku Terbaru</div>
-    <div class="row mx-10">
-        <div class="col-3 px-3">
-            <img class="d-block w-100 mt-5 rounded-3"
-                src="https://www.bukukita.com/babacms/displaybuku/71047_f.jpg"></div>
-        <div class="col-3 px-3">
-            <img class="d-block w-100 mt-5 rounded-3"
-                src="https://www.bukukita.com/babacms/displaybuku/71047_f.jpg"></div>
-        <div class="col-3 px-3">
-            <img class="d-block w-100 mt-5 rounded-3"
-                src="https://www.bukukita.com/babacms/displaybuku/71047_f.jpg"></div>
-        <div class="col-3 px-3">
-            <img class="d-block w-100 mt-5 rounded-3"
-                src="https://www.bukukita.com/babacms/displaybuku/71047_f.jpg"></div>
-    </div>
-    <div class="row mx-10">
-        <div class="col-3 px-3"> <img class="d-block w-100 mt-5 rounded-3"
-                src="https://www.bukukita.com/babacms/displaybuku/71047_f.jpg"></div>
-        <div class="col-3 px-3"> <img class="d-block w-100 mt-5 rounded-3"
-                src="https://www.bukukita.com/babacms/displaybuku/71047_f.jpg"></div>
-        <div class="col-3 px-3"> <img class="d-block w-100 mt-5 rounded-3"
-                src="https://www.bukukita.com/babacms/displaybuku/71047_f.jpg"></div>
-        <div class="col-3 px-3"> <img class="d-block w-100 mt-5 rounded-3"
-                src="https://www.bukukita.com/babacms/displaybuku/71047_f.jpg"></div>
-    </div>
     <div class="container">
-        <div class="col-12 h5 my-5" style="font-family: poppins">request buku</div>
+        <div class="h3 text-center mt-3 mb-3">Buku Terbaru</div>
+        <div class="row">
+            @foreach ($allBuku as $item)
+                <div class="col-md-3 col-12 mb-4">
+                    <div class="card shadow-none border">
+                        <img src="{{ asset('img/cover/' . $item->cover) }}" class="figure-img img-fluid rounded"
+                            style="object-fit:contain;" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $item->name }}</h5>
+                            <p>{{ $item->kategori->name }}</p>
+                            <a href="{{ url('library/' . $item->name) }}" class="btn btn-dark btn-sm">lihat</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+        <div class="h3 text-center mt-3 mb-3">Request Buku</div>
         <div class="form-floating mb-3 mt-3">
             <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
             <label for="floatingInput">Nama Lengkap</label>
@@ -53,6 +43,5 @@
         <div class="text-center">
             <button type="submit" class="btn btn-dark align-items-center px-6">kirim</button>
         </div>
-
     </div>
 @endsection

@@ -19,32 +19,32 @@
         <div class="collapse navbar-collapse" id="navigation">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'home' ? 'p-2 btn-dark text-white' : '' }}"
+                    <a class="btn shadow-none btn-sm px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'home' ? 'p-2 btn-dark text-white' : '' }}"
                         aria-current="page" href="{{ route('home') }}">
                         Home
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'library' ? 'p-2 btn-dark text-white' : '' }}"
+                    <a class="btn shadow-none btn-sm px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'library' ? 'p-2 btn-dark text-white' : '' }}"
                         href="{{ route('library') }}">
                         Library
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'request' ? 'p-2 btn-dark text-white' : '' }}"
+                    <a class="btn shadow-none btn-sm px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'request' ? 'p-2 btn-dark text-white' : '' }}"
                         href="{{ route('request') }}">
                         Request
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'review' ? 'p-2 btn-dark text-white' : '' }}"
+                    <a class="btn shadow-none btn-sm px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'review' ? 'p-2 btn-dark text-white' : '' }}"
                         aria-current="page" href="{{ route('review') }}">
                         Review
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn shadow-none btn-sm text-start px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'about' ? 'p-2 btn-dark text-white' : '' }}"
+                    <a class="btn shadow-none btn-sm px-4 mx-lg-2 mb-0 {{ Route::currentRouteName() == 'about' ? 'p-2 btn-dark text-white' : '' }}"
                         href="{{ route('about') }}">
                         About
                     </a>
@@ -98,9 +98,11 @@
     </div>
 </nav>
 <!-- End Navbar -->
+@section('scriptNav')
 <script>
     const toggler = document.querySelector("#profileDropdownToggle");
     toggler.addEventListener("click", function() {
         document.querySelector("#toggle").classList.toggle("show");
     });
 </script>
+@endsection

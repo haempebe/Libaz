@@ -10,10 +10,10 @@
 
             <ul class="nav col-md-4 justify-content-end">
                 <li class="nav-item"><a href="/" class="px-2 text-white font-weight-bold text-sm">Home</a></li>
-                <li class="nav-item"><a href="#" class="px-2 text-white font-weight-bold text-sm">Library</a></li>
-                <li class="nav-item"><a href="#" class="px-2 text-white font-weight-bold text-sm">E-Book</a></li>
-                <li class="nav-item"><a href="#" class="px-2 text-white font-weight-bold text-sm">Review</a></li>
-                <li class="nav-item"><a href="/about" class="px-2 text-white font-weight-bold text-sm">About</a></li>
+                <li class="nav-item"><a href="{{route('library')}}" class="px-2 text-white font-weight-bold text-sm">Library</a></li>
+                <li class="nav-item"><a href="{{route('request')}}" class="px-2 text-white font-weight-bold text-sm">Request</a></li>
+                <li class="nav-item"><a href="{{route('review')}}" class="px-2 text-white font-weight-bold text-sm">Review</a></li>
+                <li class="nav-item"><a href="{{route('about')}}" class="px-2 text-white font-weight-bold text-sm">About</a></li>
             </ul>
         </footer>
     </div>

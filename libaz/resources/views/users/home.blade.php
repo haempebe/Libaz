@@ -172,45 +172,26 @@
             </div>
         </div>
         <div class="mt-7 col-8 text-center h3 mx-auto border-bottom pb-2">
-            Buku Terpopuler
+            Buku Terbaru
         </div>
         <div class="container mt-5">
             <div class="row">
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="card shadow-none border">
-                        <div class="card-body text-center p-3">
-                            <img class="w-100 border-radius-md p-5" src="/img/favicon.png">
-                            <div class="text-sm font-weight-bolder">Keanggotaan</div>
+                @foreach ($allBuku as $item)
+                    <div class="col-md-3 col-12 mb-4">
+                        <div class="card shadow-none border">
+                            <img src="{{ asset('img/cover/' . $item->cover) }}" class="figure-img img-fluid rounded"
+                                style="object-fit:contain;" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $item->name }}</h5>
+                                <p>{{ $item->kategori->name }}</p>
+                                <a href="{{ url('library/' . $item->name) }}" class="btn btn-dark btn-sm">lihat</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="card shadow-none border">
-                        <div class="card-body text-center p-3">
-                            <img class="w-100 border-radius-md p-5" src="/img/favicon.png">
-                            <div class="text-sm font-weight-bolder">Keanggotaan</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="card shadow-none border">
-                        <div class="card-body text-center p-3">
-                            <img class="w-100 border-radius-md p-5" src="/img/favicon.png">
-                            <div class="text-sm font-weight-bolder">Keanggotaan</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="card shadow-none border">
-                        <div class="card-body text-center p-3">
-                            <img class="w-100 border-radius-md p-5" src="/img/favicon.png">
-                            <div class="text-sm font-weight-bolder">Keanggotaan</div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
-        <div class="mt-7 col-8 text-center h3 mx-auto border-bottom pb-2">
+        <div class="col-8 text-center h3 mx-auto border-bottom pb-2">
             Review Buku
         </div>
         <div class="container mt-5">
@@ -243,11 +224,12 @@
                     <div class="card shadow-none border">
                         <img src="/img/favicon.png" class="card-img-top" style="max-height: 120px" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
-                      </div>
+                    </div>
                 </div>
             </div>
         </div>

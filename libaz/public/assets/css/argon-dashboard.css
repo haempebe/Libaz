@@ -32,7 +32,7 @@
   --bs-secondary: #8392ab;
   --bs-success: #2dce89;
   --bs-info: #11cdef;
-  --bs-warning: #fb6340;
+  --bs-warning: #fb8c00;
   --bs-danger: #f5365c;
   --bs-light: #e9ecef;
   --bs-dark: #344767;
@@ -579,11 +579,11 @@ progress {
   text-transform: uppercase;
 }
 
-.blockquote {
+blockquote {
   margin-bottom: 1rem;
   font-size: 1.25rem;
 }
-.blockquote > :last-child {
+blockquote > :last-child {
   margin-bottom: 0;
 }
 
@@ -9398,7 +9398,7 @@ textarea.form-control-lg {
 }
 
 .text-warning {
-  color: #fb6340 !important;
+  color: #fb8c00 !important;
 }
 
 .text-danger {
@@ -23124,10 +23124,10 @@ p {
   background-image: linear-gradient(310deg, #212229, #212529);
 }
 
-.blockquote {
+blockquote {
   border-left: 3px solid #6c757d;
 }
-.blockquote > span {
+blockquote {
   font-style: italic;
 }
 

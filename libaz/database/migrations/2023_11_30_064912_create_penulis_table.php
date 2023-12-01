@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('denda', function (Blueprint $table) {
+        Schema::create('penulis', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_peminjaman');
-            $table->integer('jumlah_denda');
+            $table->string('name');
             $table->timestamps();
-            $table->foreign('id_peminjaman')->references('id')->on('peminjaman');
         });
     }
 
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('denda');
+        Schema::dropIfExists('penulis');
     }
 };
