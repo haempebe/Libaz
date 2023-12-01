@@ -19,7 +19,7 @@
                                             id</th>
                                         <th
                                             class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            name buku</th>
+                                            Category Name </th>
                                         <th
                                             class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             Make at</th>
@@ -52,13 +52,13 @@
                                                     <span class="btn-inner--text"> Edit</span>
                                                 </a>
                                                 <form class="d-inline" onsubmit="return confirm('sure to delete this data')"
-                                                    action="{{ url('category/' . $item->id . '/delete') }}" method="post">
+                                                    action="{{ url('book/category/' . $item->id . '/delete') }}" method="post">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button class="btn btn-xs btn-danger mb-0 font-weight-bold text-xs">
                                                         <span class="btn-inner--icon"><i
                                                                 class="fas fa-trash-alt"></i></span>
-                                                        <span class="btn-inner--text"> Delete</span>
+                                                        <span class="btn-inner--text"></span>
                                                     </button>
                                                 </form>
                                             </td>
@@ -75,10 +75,10 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <form method="POST" action="{{ route('category.perform') }}">
+                    <form method="POST" action="{{ route('book.category.perform') }}">
                         @csrf
                         <div class="card-header border-radius-lg pb-0">
-                            <p class="mb-0">+ New Category</p>
+                            <p class="mb-0">+ Add New Category</p>
                         </div>
                         <div class="card-body pb-0">
                             <div class="form-group">

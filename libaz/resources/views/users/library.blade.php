@@ -34,7 +34,7 @@
                                 <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
                                     <div class="accordion-body">
                                         <div role="group" aria-label="Basic checkbox toggle button group">
-                                            @foreach ($allFilter as $pill)
+                                            @foreach ($allKategori as $pill)
                                                 <input type="checkbox" class="btn-check" id="kategori{{ $pill->id }}"
                                                     autocomplete="off">
                                                 <label class="btn btn-outline-dark"
@@ -77,13 +77,14 @@
             </div>
             <div class="col-xxl-9 col-md-8 mx-auto">
                 <div class="row">
-                    @foreach ($allCategory as $item)
+                    @foreach ($allBuku as $item)
                         <div class="col-xxl-3 col-md-4 col-6 mb-3">
                             <div class="card shadow-none border">
-                                <img src="/img/favicon.png" class="figure-img img-fluid rounded"
-                                    style="max-height: 200px; object-fit:contain;" alt="...">
+                                <img src="{{ asset('img/cover/' . $item->cover) }}" class="figure-img img-fluid rounded"
+                                    style="object-fit:contain;" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $item->name }}</h5>
+                                    <p>{{$item->kategori->name}}</p>
                                     <a href="{{ url('library/' . $item->name) }}" class="btn btn-dark btn-sm">lihat</a>
                                 </div>
                             </div>
@@ -92,7 +93,7 @@
                 </div>
             </div>
             <div class="d-flex justify-content-end">
-                {{ $allCategory->links('components.paginate') }}
+                {{ $allBuku->links('components.paginate') }}
             </div>
         </div>
     </div>

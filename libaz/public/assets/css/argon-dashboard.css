@@ -579,11 +579,11 @@ progress {
   text-transform: uppercase;
 }
 
-.blockquote {
+blockquote {
   margin-bottom: 1rem;
   font-size: 1.25rem;
 }
-.blockquote > :last-child {
+blockquote > :last-child {
   margin-bottom: 0;
 }
 
@@ -23124,10 +23124,10 @@ p {
   background-image: linear-gradient(310deg, #212229, #212529);
 }
 
-.blockquote {
+blockquote {
   border-left: 3px solid #6c757d;
 }
-.blockquote > span {
+blockquote {
   font-style: italic;
 }
 

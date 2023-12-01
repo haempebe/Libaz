@@ -25,6 +25,13 @@
             @if (in_array(request()->route()->getName(),
                     ['login', 'register', 'recover-password']))
                 @yield('content')
+            @elseif (in_array(request()->route()->getName(),
+            ['home', 'library','detail.library','about','review','request']))
+                @include('layouts.navbars.users.topnav')
+                <main class="main-content pt-md-6 pt-6 mt-2">
+                    @yield('content')
+                </main>
+                @include('layouts.footers.users.footer')
             @else
                 <div class="min-height-300 bg-dark position-absolute w-100"></div>
                 @include('layouts.navbars.auth.sidenav')
