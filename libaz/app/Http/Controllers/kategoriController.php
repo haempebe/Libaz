@@ -1,22 +1,23 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 use Illuminate\support\Facades\DB;
 
 
 class Kategoricontroller extends Controller
 {
-    public function index()
+    public function kategori()
     {
-       $kategori = DB::table('kategori')->get();
+       $allCategory = Kategori::get();
 
-       return view('kategori.tampil', ['kategori => $kategori']);
+       return view('pages.book.category', ['allCategory' => $allCategory]);
    }
 
     public function create()
     {
-        return view('ketegori.tambah');
+        return view('pages.book.category');
     }
 
     public function store(Request $request)
@@ -31,16 +32,16 @@ class Kategoricontroller extends Controller
         ]);
         return redirect('/kategori');
     }
-   
+
     public function show($id)
      {
       $kategori = DB::table('kategori')->where('id', $id)->first();
-      return view('kategori.detail', ['kategori' => $kategori]);  
+      return view('kategori.detail', ['kategori' => $kategori]);
     }
     public function edit($id)
     {
         $kategori = DB::table('kategori')->where('id', $id)->first();
-      return view('kategori.edit', ['kategori' => $kategori]);  
+      return view('kategori.edit', ['kategori' => $kategori]);
     }
     public function update(Request $request, $id)
     {
