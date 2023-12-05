@@ -65,7 +65,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('/category', [CategoryController::class, 'store'])->name('category.perform');
     Route::delete("category/{id}/delete", [CategoryController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/image/create', [ImageController::class, 'create'])->name('image.create');
+    Route::get('/image/create', [ImageController::class, 'create'])->name('image.create');  
 
     Route::get('/management-users', [managementUsers::class, 'index'])->name('management');
     Route::delete('management-user/{id}/delete', [managementUsers::class, 'destroy'])->name('management.destroy');
@@ -73,11 +73,11 @@ Route::group(['middleware' => 'admin'], function () {
 
     
 
-    Route::post('/management-user-tolak',[managementUsers::class, 'penolakan'])->name('penolakan');
+    Route::post('/management-user-tolak',[managementUsers::class, 'penolakan'])->name('management.penolakan');
     Route::get('/management-user-tolak/{id}', [managementUsers::class, 'show'])->name('management.show');
     Route::get('/management-user-terima/{id}', [managementUsers::class, 'view'])->name('management.view');
 
-    Route::get('/management-user-info', [infoController::class, 'info'])->name('management.info');
+    Route::post('/management-user-info', [infoController::class, 'info'])->name('management.info');
     Route::get('/management-user-info/{id}', [infoController::class, 'show'])->name('management.info');
 
     Route::get('/{page}', [PageController::class, 'index'])->name('page');

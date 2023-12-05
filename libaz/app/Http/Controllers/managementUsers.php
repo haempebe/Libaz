@@ -37,11 +37,11 @@ class managementUsers extends Controller
         $allUsers = keanggotaan::findOrFail($id);
         // dd($allUsers->email);
         return view('pages.tampil_tolak')->with('allUsers', $allUsers);
-        // $allUsers->penolakan = $request->input('penolakan');
-        // $allUsers->status = 'Ditolak';
-        // $allUsers->save();
+        $allUsers->penolakan = $request->input('penolakan');
+        $allUsers->status = 'Ditolak';
+        $allUsers->save();
 
-        return redirect()->route('pages.tampil_terima')->with('succes', 'Pengajuan telah ditolak.');
+        return redirect()->route('pages.tampil_tolak')->with('success', 'Pengajuan telah ditolak.');
     }
 
     public function penolakan()

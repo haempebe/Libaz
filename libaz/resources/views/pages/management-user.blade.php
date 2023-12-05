@@ -4,7 +4,7 @@
 @section('content')
 @include('layouts.navbars.auth.topnav', ['title' => 'Users Management'])
 
-<div class="container-fluid py-5">
+<div class="container-fluid py-4">
     <div class="card mb-4">
         <div class="card-header pb-0">
         </div>
@@ -42,41 +42,41 @@
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-secondary text-white">🚫 Hapus</button>
                                 </form>
-                                <form class="d-inline" action="{{route('register.perform')}}" method="POST" id="createUser">
+                                {{-- <a href="{{route('management.show', $item->id)}}"><button type="submit" class="btn btn-primary">🚫 Tolak</button></a> --}}
+                                <form class="d-inline" action="{{ route('register.perform') }}" method="POST" id="createUser">
                                     @csrf
                                     <div class="form-group" hidden style="display:none">
                                         <label for="example-text-input" class="form-control-label">username</label>
-                                        <input class="form-control" type="text" name="username" value="{{ $item->username}}" onfocus="focused(this)" onfocusout="defocused(this)">
+                                        <input class="form-control" type="text" name="username" value="{{ $item->username }}" onfocus="focused(this)" onfocusout="defocused(this)">
                                         @error('username')
                                         <p class='text-danger text-xs pt-1'> {{ $message }} </p>
                                         @enderror
                                     </div>
                                     <div class="form-group" hidden style="display:none">
                                         <label for="example-text-input" class="form-control-label">email</label>
-                                        <input class="form-control" type="text" name="email" value="{{ $item->email}}" onfocus="focused(this)" onfocusout="defocused(this)">
+                                        <input class="form-control" type="text" name="email" value="{{ $item->email }}" onfocus="focused(this)" onfocusout="defocused(this)">
                                         @error('email')
                                         <p class='text-danger text-xs pt-1'> {{ $message }} </p>
                                         @enderror
                                     </div>
                                     <div class="form-group" hidden style="display:none">
                                         <label for="example-text-input" class="form-control-label">password</label>
-                                        <input class="form-control" type="text" name="password" value="{{ $item->password}}" onfocus="focused(this)" onfocusout="defocused(this)">
+                                        <input class="form-control" type="text" name="password" value="{{ $item->password }}" onfocus="focused(this)" onfocusout="defocused(this)">
                                         @error('password')
                                         <p class='text-danger text-xs pt-1'> {{ $message }} </p>
                                         @enderror
                                     </div>
-                                    <button  type="submit" class="btn btn-primary">🚫 Tolak</button>
-                                    <button type="submit" id="submitBtn" class="btn btn-info">🤝Terima</button>
+                                    <div class="d-inline">
+                                        <a href="{{route('management.show', $item->id)}}"><button type="submit" class="btn btn-primary">🚫 Tolak</button></a>
+                                        <button type="submit" id="submitBtn" class="btn btn-info">🤝Terima</button>
+                                    </div>
                                 </form>
-                                <div class="d-inline">
-                                    {{-- <button type="submit" class="btn btn-primary">🚫 Tolak</button>
-                                    <button type="submit" id="submitBtn" class="btn btn-info">🤝Terima</button> --}}
-                                </div>
+
                             </td>
 
                         </tr>
                         @php
-                        $i++
+                        $i++;
                         @endphp
                         @endforeach
                         @foreach ($allUsers as $item)
@@ -89,15 +89,15 @@
                                 <form class="d-inline" onsubmit="return confirm('sure to delete this data')" action="{{ url('/users' . $item->id . '/delete') }}" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-secondary text-white" {{ $item->username == 'admin' ? 'disabled' : ''  }}>🚫 Hapus</button>
+                                    <button type="submit" class="btn btn-secondary text-white" {{ $item->username == 'admin' ? 'disabled' : '' }}>🚫 Hapus</button>
+                                    <a href="{{route('management.view', $item->id)}}">
+                                        <button type="submit" class="btn btn-success "> Info</button>
+                                    </a>
                                 </form>
-                                <a href="{{ route('management.show', $item->id) }}">
-                                    <button type="submit" class="btn btn-success "> Info</button>
-                                </a>
                             </td>
                         </tr>
                         @php
-                        $i++
+                        $i++;
                         @endphp
                         @endforeach
                     </tbody>

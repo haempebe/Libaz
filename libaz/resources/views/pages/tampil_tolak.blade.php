@@ -40,9 +40,9 @@
             </div>
             <div class="col-lg-4">
                 <div class="card-body">
-                    <h5 class="card-title h3"> {{ $allUsers->id --}} {{ $allUsers->username --}}</h5>
-                    <p class="card-text h4">{{ $allUsers->email --}}</p>
-                    <form action="{{ route('penolakan') }}" method="POST">
+                    <h5 class="card-title h3"> {{$allUsers->id --}} {{$allUsers->username}}</h5>
+                    <p class="card-text h4">{{$allUsers->email}}</p>
+                    <form action="{{-- route('penolakan') --}}" method="POST">
                         @csrf
                         <label for="penolakan">Informasi Penolakan:</label>
 
