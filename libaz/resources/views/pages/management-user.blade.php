@@ -22,6 +22,8 @@
                             <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                 Make at</th>
                             <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                Status</th>
+                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                 Ection</th>
                             <th class="text-center text-secondary opacity-7"></th>
                         </tr>
@@ -36,12 +38,9 @@
                             <td class="text-center">{{ $item->username }}</td>
                             <td class="text-center">{{ $item->email }}</td>
                             <td class="text-center">{{ $item->updated_at }}</td>
+                            <td class="text-center">{{ $item->updated_at }}</td>
                             <td class="align-middle text-center text-sm pt-4">
-                                <form class="d-inline" onsubmit="return confirm('sure to delete this data')" id="deleteAnggota" action="{{ url('management-user/' . $item->id . '/delete') }}" method="post">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-secondary text-white">🚫 Hapus</button>
-                                </form>
+
                                 {{-- <a href="{{route('management.show', $item->id)}}"><button type="submit" class="btn btn-primary">🚫 Tolak</button></a> --}}
                                 <form class="d-inline" action="{{ route('register.perform') }}" method="POST" id="createUser">
                                     @csrf
@@ -67,8 +66,32 @@
                                         @enderror
                                     </div>
                                     <div class="d-inline">
+
+
+                                        @if($item == "pending")
+                                        <form class="d-inline" onsubmit="return confirm('sure to delete this data')" id="deleteAnggota" action="{{ url('management-user/' . $item->id . '/delete') }}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-secondary text-white">🚫 Hapus</button>
+                                        </form>
                                         <a href="{{route('management.show', $item->id)}}"><button type="submit" class="btn btn-primary">🚫 Tolak</button></a>
                                         <button type="submit" id="submitBtn" class="btn btn-info">🤝Terima</button>
+                                        @elseif($item == "terima")
+                                        <form class="d-inline" onsubmit="return confirm('sure to delete this data')" action="{{ url('/users' . $item->id . '/delete') }}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-secondary text-white" {{ $item->username == 'admin' ? 'disabled' : '' }}>🚫 Hapus</button>
+                                            <a href="{{route('management.view', $item->id)}}">
+                                                <button type="submit" class="btn btn-success "> Info</button>
+                                            </a>
+                                        </form>
+                                        @else
+                                        <form class="d-inline" onsubmit="return confirm('sure to delete this data')" id="deleteAnggota" action="{{ url('management-user/' . $item->id . '/delete') }}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-secondary text-white">🚫 Hapus</button>
+                                        </form>
+                                        @endif
                                     </div>
                                 </form>
 
