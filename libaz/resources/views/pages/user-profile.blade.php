@@ -62,7 +62,7 @@
                             <input name="file-upload-field" type="file" class="file-upload-field">
                         </div>
                     </div>
-                    <button class="btn btn-dark mt-3" type="submit">Button</button>
+                    <button class="btn btn-dark mt-3" type="submit">Simpan Perubahan</button>
                 </div>
             </form>
         </div>
