@@ -6,140 +6,80 @@
 
 <div class="container-fluid py-4">
     <div class="card mb-4">
-        <div class="card-header pb-0">
-        </div>
+        <div class="card-header pb-0"></div>
         <div class="card-body px-0 pt-0 pb-2">
             <div class="table-responsive p-0">
                 <table class="table align-items-center mb-1">
                     <thead>
                         <tr>
-                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                Nomor</th>
-                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                Nama</th>
-                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                Email</th>
-                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                Make at</th>
-                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                Status</th>
-                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                Ection</th>
-                            <th class="text-center text-secondary opacity-7"></th>
+                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nomor</th>
+                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Nama</th>
+                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
+                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Make at</th>
+                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
+                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
                         </tr>
                     </thead>
-                    @php
-                    $i = 1;
-                    @endphp
                     <tbody>
+                        @php $i = 1; @endphp
                         @foreach ($allAnggota as $item)
+
                         <tr>
                             <td class="text-center">{{ $i }}</td>
                             <td class="text-center">{{ $item->username }}</td>
                             <td class="text-center">{{ $item->email }}</td>
                             <td class="text-center">{{ $item->updated_at }}</td>
-                            <td class="text-center">{{ $item->updated_at }}</td>
-                            <td class="align-middle text-center text-sm pt-4">
+                            <td class="text-center">{{ $item->status }}</td>
+                            <td class="align-end text-center text-sm pt-4 col-md-3 ml-auto justify-content-end">
+                                <div class="d-flex ">
+                                    @if ($item->status == "pending")
+                                    <form class="d-inline" onsubmit="return confirm('sure to delete this data')" action="{{ route('management.destroy', $item->id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-secondary text-white me-2" {{ $item->username == 'admin' ? 'disabled' : '' }}>🚫 Hapus</button>
+                                    </form>
+                                    <form action="{{ route('management.updateStatus', $item->id) }}" method="POST">
+                                        @csrf
+                                        <button type="submit" name="status" value="Diterima" class="btn btn-info me-1">🤝 Terima</button>
 
-                                {{-- <a href="{{route('management.show', $item->id)}}"><button type="submit" class="btn btn-primary">🚫 Tolak</button></a> --}}
-                                <form class="d-inline" action="{{ route('register.perform') }}" method="POST" id="createUser">
-                                    @csrf
-                                    <div class="form-group" hidden style="display:none">
-                                        <label for="example-text-input" class="form-control-label">username</label>
-                                        <input class="form-control" type="text" name="username" value="{{ $item->username }}" onfocus="focused(this)" onfocusout="defocused(this)">
-                                        @error('username')
-                                        <p class='text-danger text-xs pt-1'> {{ $message }} </p>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group" hidden style="display:none">
-                                        <label for="example-text-input" class="form-control-label">email</label>
-                                        <input class="form-control" type="text" name="email" value="{{ $item->email }}" onfocus="focused(this)" onfocusout="defocused(this)">
-                                        @error('email')
-                                        <p class='text-danger text-xs pt-1'> {{ $message }} </p>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group" hidden style="display:none">
-                                        <label for="example-text-input" class="form-control-label">password</label>
-                                        <input class="form-control" type="text" name="password" value="{{ $item->password }}" onfocus="focused(this)" onfocusout="defocused(this)">
-                                        @error('password')
-                                        <p class='text-danger text-xs pt-1'> {{ $message }} </p>
-                                        @enderror
-                                    </div>
-                                    <div class="d-inline">
+                                        <button type="submit" name="status" value="Ditolak" class="btn btn-danger me-2">🚫 Tolak</button>
+                                    </form>
+                                    @elseif ($item->status == "Diterima")
+                                    <form action="{{ route('management.updateStatus', $item->id) }}" method="POST">
+                                        @csrf
 
-
-                                        @if($item == "pending")
-                                        <form class="d-inline" onsubmit="return confirm('sure to delete this data')" id="deleteAnggota" action="{{ url('management-user/' . $item->id . '/delete') }}" method="post">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-secondary text-white">🚫 Hapus</button>
-                                        </form>
-                                        <a href="{{route('management.show', $item->id)}}"><button type="submit" class="btn btn-primary">🚫 Tolak</button></a>
-                                        <button type="submit" id="submitBtn" class="btn btn-info">🤝Terima</button>
-                                        @elseif($item == "terima")
-                                        <form class="d-inline" onsubmit="return confirm('sure to delete this data')" action="{{ url('/users' . $item->id . '/delete') }}" method="post">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-secondary text-white" {{ $item->username == 'admin' ? 'disabled' : '' }}>🚫 Hapus</button>
-                                            <a href="{{route('management.view', $item->id)}}">
-                                                <button type="submit" class="btn btn-success "> Info</button>
-                                            </a>
-                                        </form>
-                                        @else
-                                        <form class="d-inline" onsubmit="return confirm('sure to delete this data')" id="deleteAnggota" action="{{ url('management-user/' . $item->id . '/delete') }}" method="post">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-secondary text-white">🚫 Hapus</button>
-                                        </form>
-                                        @endif
-                                    </div>
-                                </form>
-
-                            </td>
-
-                        </tr>
-                        @php
-                        $i++;
-                        @endphp
-                        @endforeach
-                        @foreach ($allUsers as $item)
-                        <tr>
-                            <td class="text-center">{{ $i }}</td>
-                            <td class="text-center">{{ $item->username }}</td>
-                            <td class="text-center">{{ $item->email }}</td>
-                            <td class="text-center">{{ $item->updated_at }}</td>
-                            <td class="align-middle text-center text-sm pt-4">
-                                <form class="d-inline" onsubmit="return confirm('sure to delete this data')" action="{{ url('/users' . $item->id . '/delete') }}" method="post">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-secondary text-white" {{ $item->username == 'admin' ? 'disabled' : '' }}>🚫 Hapus</button>
-                                    <a href="{{route('management.view', $item->id)}}">
-                                        <button type="submit" class="btn btn-success "> Info</button>
+                                    </form>
+                                    <form class="d-inline" onsubmit="return confirm('sure to delete this data')" action="{{ route('management.destroy', $item->id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-secondary text-white me-2" {{ $item->username == 'admin' ? 'disabled' : '' }}>🚫 Hapus</button>
+                                    </form>
+                                    <a href="{{ route('management.view', $item->id) }}">
+                                        <button type="button" class="btn btn-success">Info</button>
                                     </a>
-                                </form>
+                                    @elseif ($item->status == "Ditolak")
+                                    <form action="{{ route('management.updateStatus', $item->id) }}" method="POST">
+                                        @csrf
+                                        <button type="submit" name="status" value="Diterima" class="btn btn-info me-2">🤝 Terima</button>
+                                    </form>
+                                    <form class="d-inline" onsubmit="return confirm('sure to delete this data')" action="{{ route('management.destroy', $item->id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-secondary text-white me-2" {{ $item->username == 'admin' ? 'disabled' : '' }}>🚫 Hapus</button>
+                                    </form>
+                                    @endif
+
+                                </div>
                             </td>
+
                         </tr>
-                        @php
-                        $i++;
-                        @endphp
+                        @php $i++; @endphp
                         @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-    @include('layouts.footers.auth.footer')
 </div>
-@endsection
-@section('scripts')
-<script>
-    $(document).ready(function() {
-        $('#submitBtn').on('click', function() {
-            $('#createUser').submit();
-            $('#deleteAnggota').submit();
-
-        });
-    });
-
-</script>
+@include('layouts.footers.auth.footer')
 @endsection

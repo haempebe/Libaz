@@ -1,12 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Http\Request;
-use App\Models\keanggotaan;
+use App\Models\Keanggotaan;
 
-
-class keanggotaanController extends Controller
+class KeanggotaanController extends Controller
 {
 
     public function anggota()
@@ -14,31 +13,19 @@ class keanggotaanController extends Controller
         return view('users.keanggotaan');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        $attributes = request()->validate([
+        $attributes = $request->validate([
             'username' => 'required|max:255|min:2|unique:keanggotaan,username',
             'email' => 'required|email|max:255|unique:keanggotaan,email',
             'password' => 'required|min:5|max:255',
-            'pending'
+            'status' => 'in:pending,terima,tolak'
         ]);
-        $keanggotaan = keanggotaan::create($attributes);
+
+        $attributes['status'] = 'pending'; // Assuming 'pending' is a default value or it comes from the form
+
+        $keanggotaan = Keanggotaan::create($attributes);
 
         return redirect('/');
-    }
-    public function update(Request $request, keanggotaan $user)
-    {
-        // Lakukan validasi input jika diperlukan
-        $request->validate([
-            'username' => 'required|max:255|min:2|unique:keanggotaan,username',
-            'email' => 'required|email|max:255|unique:keanggotaan,email',
-            'password' => 'required|min:5|max:255',
-            'pending'
-        ]);
-
-        // Perbarui data user
-        $user->update($request->all());
-
-        return redirect('/users')->with('success', 'User berhasil diperbarui.');
     }
 }

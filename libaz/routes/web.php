@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\carouselController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +30,7 @@ use App\Http\Controllers\users\IndexController;
 use App\Http\Controllers\users\ReviewController;
 use App\Http\Controllers\users\LibraryController;
 use App\Http\Controllers\users\requestController;
+
 
 // Route::get('/', function () {
 //     return redirect('/dashboard');
@@ -65,24 +67,30 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('/category', [CategoryController::class, 'store'])->name('category.perform');
     Route::delete("category/{id}/delete", [CategoryController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/image/create', [ImageController::class, 'create'])->name('image.create');  
 
     Route::get('/management-users', [managementUsers::class, 'index'])->name('management');
     Route::delete('management-user/{id}/delete', [managementUsers::class, 'destroy'])->name('management.destroy');
     Route::delete('users{id}/delete', [managementUsers::class, 'delete'])->name('management.delete');
+    Route::prefix('management')->group(function () {
+        Route::get('/', [ManagementUsers::class, 'index'])->name('management');
+        Route::post('/{id}/update', [ManagementUsers::class, 'updateStatus'])->name('management.updateStatus');
+        Route::delete('/{id}/delete', [ManagementUsers::class, 'destroy'])->name('management.destroy');
+    });
 
-    
 
-    Route::post('/management-user-tolak',[managementUsers::class, 'penolakan'])->name('management.penolakan');
-    Route::get('/management-user-tolak/{id}', [managementUsers::class, 'show'])->name('management.show');
     Route::get('/management-user-terima/{id}', [managementUsers::class, 'view'])->name('management.view');
+    Route::put('/management/{id}/update', [ManagementUsers::class, 'update'])->name('management.update');
 
     Route::post('/management-user-info', [infoController::class, 'info'])->name('management.info');
     Route::get('/management-user-info/{id}', [infoController::class, 'show'])->name('management.info');
+    Route::put('/users/{id}/update', 'ManagementUsers@update')->name('management.update');
 
     Route::get('/{page}', [PageController::class, 'index'])->name('page');
+
+    Route::post('/upload-gambar', [carouselController::class, 'store'])->name('upload-gambar');
+    Route::delete('/hapus-gambar', [CarouselController::class, 'destroy'])->name('hapus-gambar');
 });
 
-    Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth'], function () {
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 });

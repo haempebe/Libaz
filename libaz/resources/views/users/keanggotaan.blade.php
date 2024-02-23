@@ -56,6 +56,7 @@
                                         <p class='text-danger text-xs pt-1'> {{ $message }} </p>
                                     @enderror
                                     <label for="floatingInput">Nama</label>
+                                    
                                 </div>
                                 <div class="form-floating mb-4">
                                     <input type="email" name="email" class="form-control" placeholder="Email"
