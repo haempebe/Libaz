@@ -18,8 +18,7 @@
         </div>
         <div class="card-body">
             <form action="{{ route('book.book.update', $buku->id) }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                @method('PUT')
+
                 <div class="row">
                     <div class="col-lg-9 pe-lg-5">
                         <div class="mb-3">
@@ -63,18 +62,13 @@
                                                                         class="fas fa-edit"></i></span>
                                                                 <span class="btn-inner--text"> Edit</span>
                                                             </a>
-                                                            <form class="d-inline"
-                                                                onsubmit="return confirm('sure to delete this data')"
-                                                                action="#" method="post">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <button
-                                                                    class="btn   btn-danger mb-0 font-weight-bold text-xs">
-                                                                    <span class="btn-inner--icon"><i
-                                                                            class="fas fa-trash-alt"></i></span>
-                                                                    <span class="btn-inner--text"></span>
-                                                                </button>
-                                                            </form>
+                                                            <a href="#"
+                                                                class="btn btn-danger mb-0 font-weight-bold text-xs"
+                                                                onclick="event.preventDefault(); if(confirm('Apakah Anda yakin ingin menghapus?')) { document.getElementById('delete-form').submit(); }">
+                                                                <span class="btn-inner--icon"><i
+                                                                        class="fas fa-trash-alt"></i></span>
+                                                                <span class="btn-inner--text"></span>
+                                                            </a>
                                                         </td>
                                                     </tr>
                                                 @endforeach
@@ -173,11 +167,20 @@
                         </div>
                     </div>
                 </div>
+                @csrf
+                @method('PUT')
                 <a href="{{ route('book.book') }}" class="btn btn-secondary ">Cancel</a>
                 <button type="submit" class="btn btn-dark">Update</button>
             </form>
         </div>
     </div>
+    @foreach ($items as $itemI)
+        <form id="delete-form" action="{{ route('item.item.destroy', $itemI->id) }}" method="POST"
+            style="display: none;">
+            @csrf
+            @method('DELETE')
+        </form>
+    @endforeach
 @endsection
 @section('scripts')
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>

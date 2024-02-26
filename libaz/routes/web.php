@@ -67,6 +67,8 @@ Route::group(['middleware' => 'admin'], function () {
         Route::get('', [BukuController::class, 'buku'])->name('book');
         Route::get('/create', [BukuController::class, 'create'])->name('create');
         Route::post('/store', [BukuController::class, 'store'])->name('book.perform');
+        Route::get('{id}', [BukuController::class, 'edit'])->name('edit');
+        Route::put('{id}', [BukuController::class, 'update'])->name('book.update');
         Route::get('/category', [KategoriController::class, 'kategori'])->name('category');
         Route::post('/category', [KategoriController::class, 'store'])->name('category.perform');
         Route::delete("/category/{id}/delete", [KategoriController::class, 'destroy'])->name('category.destroy');
@@ -79,15 +81,11 @@ Route::group(['middleware' => 'admin'], function () {
         Route::get('/publisher', [PenerbitController::class, 'penerbit'])->name('publisher');
         Route::post('/publisher', [PenerbitController::class, 'store'])->name('publisher.perform');
         Route::delete("publisher/{id}/delete", [PenerbitController::class, 'destroy'])->name('publisher.destroy');
-        Route::get('{id}', [BukuController::class, 'edit'])->name('edit');
-        Route::put('{id}', [BukuController::class, 'update'])->name('book.update');
         Route::delete('/{id}/delete', [BukuController::class, 'destroy'])->name('book.destroy');
     });
     Route::prefix('item')->name("item.")->group(function () {
         Route::get('', [BukuController::class, 'item'])->name('item');
-
         Route::delete('/{id}/delete', [BukuController::class, 'itemDestroy'])->name('item.destroy');
-
     });
     Route::get('/{page}', [PageController::class, 'index'])->name('page');
 });

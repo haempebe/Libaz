@@ -57,7 +57,7 @@
                                         <span class="btn-inner--text"> Edit</span>
                                     </a>
                                     <form class="d-inline" onsubmit="return confirm('sure to delete this data')"
-                                        action="{{ url('book/' . $item->id . '/delete') }}" method="post">
+                                        action="{{ url('item/' . $item->id . '/delete') }}" method="post">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn   btn-danger mb-0 font-weight-bold text-xs">

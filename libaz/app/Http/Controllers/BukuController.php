@@ -10,6 +10,7 @@ use App\Models\Penulis;
 use App\Models\Kategori;
 use App\Models\Penerbit;
 use Illuminate\Http\Request;
+use Mockery\Generator\Method;
 
 class BukuController extends Controller
 {
@@ -92,7 +93,7 @@ class BukuController extends Controller
         $penulis = Penulis::get();
         $penerbit = Penerbit::get();
         $buku     = Buku::findOrFail($id);
-        return view('pages.book.perform.editBook', compact('buku', 'kategori', 'rak', 'penulis', 'penerbit', 'copies','items'));
+        return view('pages.book.perform.editBook', compact('buku', 'kategori', 'rak', 'penulis', 'penerbit', 'copies', 'items'));
     }
 
     public function update(Request $request, $id)
@@ -182,7 +183,9 @@ class BukuController extends Controller
         }
         return redirect('/book')->with('succes', 'added data successfully');
     }
-    public function itemDestroy()
+    public function itemDestroy($id)
     {
+        item::where('id', $id)->delete();
+        return redirect()->back()->with('succes', 'success, item deleted');
     }
 }
