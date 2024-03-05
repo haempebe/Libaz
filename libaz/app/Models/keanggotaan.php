@@ -1,13 +1,13 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class keanggotaan extends Model
+class Keanggotaan extends Model
 {
     use HasFactory;
+
     protected $table = 'keanggotaan';
 
     protected $fillable = [
@@ -15,8 +15,10 @@ class keanggotaan extends Model
         'firstname',
         'lastname',
         'email',
-        'password'
+        'password',
+        'status'
     ];
+
     protected $hidden = [
         'password',
     ];

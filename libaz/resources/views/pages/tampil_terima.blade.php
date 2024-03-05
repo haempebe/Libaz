@@ -14,49 +14,39 @@
         <div class="card-body px-0 pt-0 pb-2">
             <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
-                    {{-- <thead>
-                        <tr>
-                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                Nomor</th>
-                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                Email</th>
-                            <th class="text-secondary opacity-7"></th>
-                        </tr>
-                    </thead> --}}
                     <tbody>
-                        <td class="text-center"></td>
-                        <td class="text-center"></td>
-                        <td class="text-center "></td>
+                        <tr>
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-        <div class="p-3 mb-2 bg-success text-white">Akun ini Di Terima Silakan Tekan Tombol Tolak Untuk Menolak Akun!!!
+        <div class="p-3 mb-2 bg-success text-white h2">Akun ini Di Terima!!
         </div>
 
         <div class="row g-0">
-            <div class="col-lg-3">
-                {{-- <div class="card" style="width: 18rem;"> --}}
-                    {{-- <img src="/img/team-3.jpg " class="card-img-top" alt="..."> --}}
-                    <div class="card-body">
-                        <a {{ route('management.show', $allUsers->id) }}>
-                            <button type="submit" class="btn btn-primary"  action="{{-- route('management.show', $allUsers->id) --}}">🤝
-                                Tolak</button>
-                        </a>
-                    </div>
-                {{-- </div> --}}
-            </div>
-            <div class="col-lg-4">
+            <div class="col-lg-0">
                 <div class="card-body">
-                    <h5 class="card-title h3">{{ $allUsers->id }} {{ $allUsers->username }}</h5>
-                    <p class="card-text h4">{{ $allUsers->email }}</p>
-                    <form action="{{ route('management.show', $allUsers->id) }}" method="POST">
+                    <form action="{{ route('management', $allUsers->id) }}">
                         @csrf
+                        <button type="submit" name="status" value="Ditolak" class="btn btn-danger me-2">kembali</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="card-body">
+                    <h5 class="card-title h2">{{ $allUsers->id }} {{ $allUsers->username }}</h5>
+                    <p class="card-text h5">{{ $allUsers->email }}</p>
+                    <form action="{{ route('management.update', $allUsers->id) }}" method="POST">
+                        @csrf
+                        @method('PUT')
                         <label for="informasi_penerimaan">Informasi Penerimaan:</label>
-                        <textarea class="form-control" name="informasi_penerimaan" id="informasi_penerimaan" cols="30" rows="10"></textarea>
-
-                        <a href=""><button class="btn btn-danger mt-3" type="submit">Save</button></a>
+                        <textarea class="form-control" name="informasi_penerimaan" id="informasi_penerimaan" cols="30" rows="10">{{ $allUsers->informasi_penerimaan }}</textarea>
+                        <button class="btn btn-success mt-3" type="submit">Update</button>
+                        <button class="btn btn-secondary mt-3" type="submit">save</button>
                     </form>
                 </div>
             </div>

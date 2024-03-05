@@ -13,10 +13,13 @@ class infoController extends Controller
         return view('pages.tampil_info')->with('allinformasi', $allinformasi);
     }
 
-    public function Show($id)
+    public function update(Request $request, $id)
     {
-        $allinformasi = penolakan::find($id);
-        return view('pages.tampil_info', ['allinformasi' => $allinformasi]);
+        $user = penolakan::findOrFail($id);
+        $user->informasi_penerimaan = $request->input('informasi_penerimaan');
+        $user->save();
+
+        return redirect()->back()->with('success', 'Informasi penerimaan berhasil disimpan!');
     }
 
 

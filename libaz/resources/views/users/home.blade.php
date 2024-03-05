@@ -4,27 +4,35 @@
 @section('content')
 
 <div class="col-md-8 mx-auto">
-    <div id="carousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner" style="border-radius: 10px">
-            <div class="carousel-item active">
-                <img class="d-block w-100" src="https://i.ibb.co/MCJK9bL/Carousel.png" alt="First slide">
+    <div class="col-md-8 mx-auto">
+        <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" style="border-radius: 10px">
+                @php
+                $nama_file = session('nama_file');
+                @endphp
+
+                @if($nama_file)
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="{{ asset('uploads/' . $nama_file) }}" alt="Uploaded Image">
+                </div>
+                @else
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="https://i.ibb.co/MCJK9bL/Carousel.png" alt="Default Image">
+                </div>
+                @endif
+
             </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="https://i.ibb.co/MCJK9bL/Carousel.png" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="https://i.ibb.co/MCJK9bL/Carousel.png" alt="Third slide">
-            </div>
+            <a class="carousel-control-prev" href="#carousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-        <a class="carousel-control-prev" href="#carousel" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carousel" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
     </div>
+
 </div>
 
 <div class="bg-dark mt-5">
